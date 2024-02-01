@@ -1,0 +1,145 @@
+﻿@implements IDisposable
+@inject NavigationManager NavigationManager
+
+<CdsHeader AriaLabel="IBM Platform Name" Role="banner">
+    <CdsHeaderMenuButton ButtonLabelActive="Close menu"
+                         ButtonLabelInactive="Open menu"
+                         CollapseMode="SIDE_NAV_COLLAPSE_MODE.RESPONSIVE" />
+
+    <CdsHeaderName Href="javascript:void 0" Prefix="IBM">[Platform]</CdsHeaderName>
+
+    <CdsHeaderNav MenuBarLabel="IBM [Platform]" Role="navigation">
+        <CdsHeaderNavItem Href="" Role="listitem">Home</CdsHeaderNavItem>
+        <CdsHeaderNavItem Href="weather" Role="listitem">Weather</CdsHeaderNavItem>
+        <CdsHeaderNavItem Href="auth" Role="listitem">Auth Required</CdsHeaderNavItem>
+    </CdsHeaderNav>
+
+    <div class="cds--header__global">
+        <CdsHeaderGlobalAction AriaLabel="Search"
+                               TooltipText="Search"
+                               Kind="BUTTON_KIND.PRIMARY"
+                               Size="lg"
+                               TooltipAlignment="BUTTON_TOOLTIP_ALIGNMENT.CENTER"
+                               TooltipPosition="BUTTON_TOOLTIP_POSITION.BOTTOM"
+                               Type="BUTTON_TYPE.BUTTON">
+            <CdsSVG Content="@CdsIcon.Search_32"/>
+        </CdsHeaderGlobalAction>
+        <CdsHeaderGlobalAction AriaLabel="Notification"
+                               TooltipText="Notification"
+                               Kind="BUTTON_KIND.PRIMARY"
+                               Size="lg"
+                               TooltipAlignment="BUTTON_TOOLTIP_ALIGNMENT.CENTER"
+                               TooltipPosition="BUTTON_TOOLTIP_POSITION.BOTTOM"
+                               Type="BUTTON_TYPE.BUTTON">
+            <CdsSVG Content="@CdsIcon.Notification_32" />
+        </CdsHeaderGlobalAction>
+        <CdsHeaderGlobalAction AriaLabel="App Switcher"
+                               TooltipText="App Switcher"
+                               Kind="BUTTON_KIND.PRIMARY"
+                               Size="lg"
+                               TooltipAlignment="BUTTON_TOOLTIP_ALIGNMENT.END"
+                               TooltipPosition="BUTTON_TOOLTIP_POSITION.BOTTOM"
+                               Type="BUTTON_TYPE.BUTTON">
+
+            <CdsSVG Content="@CdsIcon.Switcher_32"/>
+        </CdsHeaderGlobalAction>
+
+        <CdsHeaderGlobalAction AriaLabel="App Switcher"
+                               TooltipText="App Switcher"
+                               Kind="BUTTON_KIND.PRIMARY"
+                               Size="lg"
+                               TooltipAlignment="BUTTON_TOOLTIP_ALIGNMENT.END"
+                               TooltipPosition="BUTTON_TOOLTIP_POSITION.BOTTOM"
+                               Type="BUTTON_TYPE.BUTTON">
+            <CdsSVG Content="@CdsIcon.AiGovernance_Tracked_32"/>
+        </CdsHeaderGlobalAction>
+    </div>
+
+    <CdsSideNav AriaLabel="Side navigation" CollapseMode="SIDE_NAV_COLLAPSE_MODE.RESPONSIVE" Role="navigation">
+        <CdsSideNavItems Role="list">
+
+            <CdsHeaderSideNavItems Role="list">
+                <CdsSideNavLink Href="javascript:void(0)" Role="listitem">
+                    Link 1
+                </CdsSideNavLink>
+                <CdsSideNavLink Href="javascript:void(0)" Role="listitem">
+                    Link 2
+                </CdsSideNavLink>
+                <CdsSideNavLink Href="javascript:void(0)" Role="listitem">
+                    Link 3
+                </CdsSideNavLink>
+                <CdsSideNavMenu Title="Link 4" Role="listitem">
+                    <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />
+                    <CdsSideNavMenuItem Href="https://www.carbondesignsystem.com/" Role="button" TabIndex="-1">
+                        Sub-link 1
+                    </CdsSideNavMenuItem>
+                    <CdsSideNavMenuItem Href="https://www.carbondesignsystem.com/" Role="button" TabIndex="-1">
+                        Sub-link 2
+                    </CdsSideNavMenuItem>
+                    <CdsSideNavMenuItem Href="https://www.carbondesignsystem.com/" Role="button" TabIndex="-1">
+                        Sub-link 3
+                    </CdsSideNavMenuItem>
+                </CdsSideNavMenu>
+            </CdsHeaderSideNavItems>
+
+            <CdsSideNavLink Href="" Role="listitem">
+                <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />Home
+            </CdsSideNavLink>
+
+            <CdsSideNavLink Href="weather" Role="listitem">
+                <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />Weather
+            </CdsSideNavLink>
+
+            <CdsSideNavLink Href="auth" Role="listitem">
+                <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />Auth Required
+            </CdsSideNavLink>
+
+            <AuthorizeView Context="authorizeView">
+                <Authorized>
+                    <CdsSideNavLink Href="Account/Manage" Role="listitem">
+                        <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />
+                        @authorizeView.User.Identity?.Name
+                    </CdsSideNavLink>
+                    <CdsSideNavLink Href="javascript:void(0)" Role="listitem">
+                        <form action="Account/Logout" method="post">
+                            <AntiforgeryToken />
+                            <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+                            <button type="submit">Logout</button>
+                        </form>
+                    </CdsSideNavLink>
+                </Authorized>
+                <NotAuthorized>
+                    <CdsSideNavLink Href="Account/Register" Role="listitem">
+                        <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />Register
+                    </CdsSideNavLink>
+                    <CdsSideNavLink Href="Account/Login" Role="listitem">
+                        <CdsSVG Width="16" Height="16" ViewBox="16" Content="@CdsIcon.Fade_16" Slot="@context.TitleIconSlot" />Login
+                    </CdsSideNavLink>
+                </NotAuthorized>
+            </AuthorizeView>
+
+        </CdsSideNavItems>
+    </CdsSideNav>
+</CdsHeader>
+
+@code {
+    private string? currentUrl;
+
+    protected override void OnInitialized()
+    {
+        currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        currentUrl = NavigationManager.ToBaseRelativePath(e.Location);
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
+
