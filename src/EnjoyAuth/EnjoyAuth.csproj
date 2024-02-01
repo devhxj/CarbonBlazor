@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarbonBlazor\CarbonBlazor\CarbonBlazor.csproj" />
+    <ProjectReference Include="..\CarbonBlazor\CarbonBlazor.csproj" />
   </ItemGroup>
 
   <ItemGroup>

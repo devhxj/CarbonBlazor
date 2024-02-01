@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34518.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarbonBlazor", "src\CarbonBlazor\CarbonBlazor.csproj", "{5D2B639A-25CB-40BD-9DCA-F03CF18CD6C0}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "CarbonBlazor.Assets", "src\CarbonBlazor.Assets\CarbonBlazor.Assets.esproj", "{34403526-F4AA-4737-884F-72DF74FBFE10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnjoyAuth", "src\EnjoyAuth\EnjoyAuth.csproj", "{7677A70E-F1BF-449D-86E8-95F6679BCFB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarbonBlazor.Generator", "..\CarbonBlazor.Generator\CarbonBlazor.Generator.csproj", "{22E5B4B9-2EF5-430E-84CD-1A631A1980BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarbonBlazor.Icon", "..\CarbonBlazor.Icon\CarbonBlazor.Icon.csproj", "{12D196C5-6EA1-4BEB-AAA0-0DBF1964E74B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D2B639A-25CB-40BD-9DCA-F03CF18CD6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2B639A-25CB-40BD-9DCA-F03CF18CD6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2B639A-25CB-40BD-9DCA-F03CF18CD6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2B639A-25CB-40BD-9DCA-F03CF18CD6C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34403526-F4AA-4737-884F-72DF74FBFE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34403526-F4AA-4737-884F-72DF74FBFE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34403526-F4AA-4737-884F-72DF74FBFE10}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{34403526-F4AA-4737-884F-72DF74FBFE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34403526-F4AA-4737-884F-72DF74FBFE10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34403526-F4AA-4737-884F-72DF74FBFE10}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7677A70E-F1BF-449D-86E8-95F6679BCFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7677A70E-F1BF-449D-86E8-95F6679BCFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7677A70E-F1BF-449D-86E8-95F6679BCFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7677A70E-F1BF-449D-86E8-95F6679BCFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E5B4B9-2EF5-430E-84CD-1A631A1980BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E5B4B9-2EF5-430E-84CD-1A631A1980BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E5B4B9-2EF5-430E-84CD-1A631A1980BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E5B4B9-2EF5-430E-84CD-1A631A1980BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D196C5-6EA1-4BEB-AAA0-0DBF1964E74B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D196C5-6EA1-4BEB-AAA0-0DBF1964E74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D196C5-6EA1-4BEB-AAA0-0DBF1964E74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D196C5-6EA1-4BEB-AAA0-0DBF1964E74B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {470B244C-7D9D-447F-963B-DE1D75C66449}
+	EndGlobalSection
+EndGlobal
