@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/CarbonBlazor.Generator/CarbonBlazor.Generator.csproj
+/src/CarbonBlazor.Icon/CarbonBlazor.Icon.csproj
