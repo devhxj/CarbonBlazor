@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 /src/CarbonBlazor.Generator/CarbonBlazor.Generator.csproj
 /src/CarbonBlazor.Icon/CarbonBlazor.Icon.csproj
+/src/CarbonBlazor.Generator/CarbonBlazor.Generator.csproj
