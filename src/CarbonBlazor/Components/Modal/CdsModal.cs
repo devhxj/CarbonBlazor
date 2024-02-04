@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsModal : BaseComponent
+public class CdsModal : CdsComponentBase
 {
     /// <summary>
     /// Specify whether the Modal is displaying an alert, error or warning.
@@ -70,23 +70,24 @@ public class CdsModal : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-modal")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttribute(6, "hidden")
-            .SetAttributeNotNull(7, "alert", Alert)
-            .SetAttributeNotNull(8, "container-class", ContainerClass)
-            .SetAttributeNotNull(9, "full-width", FullWidth)
-            .SetAttributeNotNull(10, "has-scrolling-content", HasScrollingContent)
-            .SetAttributeNotNull(11, "open", Open)
-            .SetAttribute(12, "size", Size)
-            .SetAttributeNotNull(13, "prevent-close-on-click-outside", PreventCloseOnClickOutside)
-            .SetAttributeNotNull(14, "prevent-close", PreventClose)
-            .SetAttributeNotNull(15, "styles", Styles)
-            .SetAttributes(16, AdditionalAttributes)
-            .SetContent(17, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttribute(7, "hidden")
+            .SetAttributeNotNull(8, "alert", Alert)
+            .SetAttributeNotNull(9, "container-class", ContainerClass)
+            .SetAttributeNotNull(10, "full-width", FullWidth)
+            .SetAttributeNotNull(11, "has-scrolling-content", HasScrollingContent)
+            .SetAttributeNotNull(12, "open", Open)
+            .SetAttribute(13, "size", Size)
+            .SetAttributeNotNull(14, "prevent-close-on-click-outside", PreventCloseOnClickOutside)
+            .SetAttributeNotNull(15, "prevent-close", PreventClose)
+            .SetAttributeNotNull(16, "styles", Styles)
+            .SetReferenceCapture(17, CaptureReference)
+            .SetContent(18, ChildContent)
             .CloseElement();
     }
 }

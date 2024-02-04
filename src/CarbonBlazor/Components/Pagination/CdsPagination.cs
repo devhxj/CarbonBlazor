@@ -11,7 +11,7 @@ public class PaginationContext
     public string PageSizesSelectSlot = "page-sizes-select";
 }
 
-public class CdsPagination : BaseComponent<PaginationContext>
+public class CdsPagination : CdsComponentBase<PaginationContext>
 {
     /// <summary>
     /// The assistive text for the button to go to previous page.
@@ -162,34 +162,35 @@ public class CdsPagination : BaseComponent<PaginationContext>
     {
         builder
             .OpenElementAnd(0, "cds-pagination")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "backward-text", BackwardText)
-            .SetAttributeNotNull(7, "page", Page)
-            .SetAttributeNotNull(8, "formatlabeltext", FormatLabelText)
-            .SetAttributeNotNull(9, "formatstatuswithdeterminatetotal", FormatStatusWithDeterminateTotal)
-            .SetAttributeNotNull(10, "formatstatuswithindeterminatetotal", FormatStatusWithIndeterminateTotal)
-            .SetAttributeNotNull(11, "formatsupplementaltext", FormatSupplementalText)
-            .SetAttributeNotNull(12, "is-last-page", IsLastPage)
-            .SetAttributeNotNull(13, "items-per-page-text", ItemsPerPageText)
-            .SetAttributeNotNull(14, "disabled", Disabled)
-            .SetAttributeNotNull(15, "forward-text", ForwardText)
-            .SetAttributeNotNull(16, "page-input-disabled", PageInputDisabled)
-            .SetAttributeNotNull(17, "page-size", PageSize)
-            .SetAttributeNotNull(18, "page-size-input-disabled", PageSizeInputDisabled)
-            .SetAttributeNotNull(19, "page-size-label-text", PageSizeLabelText)
-            .SetAttributeNotNull(20, "pages-unknown", PagesUnknown)
-            .SetAttribute(21, "size", Size)
-            .SetAttributeNotNull(22, "start", Start)
-            .SetAttributeNotNull(23, "total-items", TotalItems)
-            .SetAttributeNotNull(24, "totalPages", TotalPages)
-            .SetAttributeNotNull(25, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(26, "styles", Styles)
-            .SetAttributes(27, AdditionalAttributes)
-            .SetContent(28, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "backward-text", BackwardText)
+            .SetAttributeNotNull(8, "page", Page)
+            .SetAttributeNotNull(9, "formatlabeltext", FormatLabelText)
+            .SetAttributeNotNull(10, "formatstatuswithdeterminatetotal", FormatStatusWithDeterminateTotal)
+            .SetAttributeNotNull(11, "formatstatuswithindeterminatetotal", FormatStatusWithIndeterminateTotal)
+            .SetAttributeNotNull(12, "formatsupplementaltext", FormatSupplementalText)
+            .SetAttributeNotNull(13, "is-last-page", IsLastPage)
+            .SetAttributeNotNull(14, "items-per-page-text", ItemsPerPageText)
+            .SetAttributeNotNull(15, "disabled", Disabled)
+            .SetAttributeNotNull(16, "forward-text", ForwardText)
+            .SetAttributeNotNull(17, "page-input-disabled", PageInputDisabled)
+            .SetAttributeNotNull(18, "page-size", PageSize)
+            .SetAttributeNotNull(19, "page-size-input-disabled", PageSizeInputDisabled)
+            .SetAttributeNotNull(20, "page-size-label-text", PageSizeLabelText)
+            .SetAttributeNotNull(21, "pages-unknown", PagesUnknown)
+            .SetAttribute(22, "size", Size)
+            .SetAttributeNotNull(23, "start", Start)
+            .SetAttributeNotNull(24, "total-items", TotalItems)
+            .SetAttributeNotNull(25, "totalPages", TotalPages)
+            .SetAttributeNotNull(26, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(27, "styles", Styles)
+            .SetReferenceCapture(28, CaptureReference)
+            .SetContent(29, ChildContent, new())
             .CloseElement();
     }
 }

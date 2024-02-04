@@ -11,7 +11,7 @@ public class ProgressStepContext
     public string SecondaryLabelTextSlot = "secondary-label-text";
 }
 
-public class CdsProgressStep : BaseComponent<ProgressStepContext>
+public class CdsProgressStep : CdsComponentBase<ProgressStepContext>
 {
     /// <summary>
     /// `true` if the progress step should be disabled.
@@ -70,23 +70,24 @@ public class CdsProgressStep : BaseComponent<ProgressStepContext>
     {
         builder
             .OpenElementAnd(0, "cds-progress-step")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "icon-label", IconLabel)
-            .SetAttributeNotNull(8, "description", Description)
-            .SetAttributeNotNull(9, "label-text", LabelText)
-            .SetAttributeNotNull(10, "label", Label)
-            .SetAttributeNotNull(11, "secondary-label-text", SecondaryLabelText)
-            .SetAttributeNotNull(12, "secondary-label", SecondaryLabel)
-            .SetAttribute(13, "state", State)
-            .SetAttributeNotNull(14, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(15, "styles", Styles)
-            .SetAttributes(16, AdditionalAttributes)
-            .SetContent(17, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "icon-label", IconLabel)
+            .SetAttributeNotNull(9, "description", Description)
+            .SetAttributeNotNull(10, "label-text", LabelText)
+            .SetAttributeNotNull(11, "label", Label)
+            .SetAttributeNotNull(12, "secondary-label-text", SecondaryLabelText)
+            .SetAttributeNotNull(13, "secondary-label", SecondaryLabel)
+            .SetAttribute(14, "state", State)
+            .SetAttributeNotNull(15, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(16, "styles", Styles)
+            .SetReferenceCapture(17, CaptureReference)
+            .SetContent(18, ChildContent, new())
             .CloseElement();
     }
 }

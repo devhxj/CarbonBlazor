@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
@@ -16,7 +17,7 @@ public class ToastNotificationContext
     public string TitleSlot = "title";
 }
 
-public class CdsToastNotification : BaseComponent<ToastNotificationContext>
+public class CdsToastNotification : CdsComponentBase<ToastNotificationContext>
 {
     /// <summary>
     /// Specify the caption
@@ -42,7 +43,7 @@ public class CdsToastNotification : BaseComponent<ToastNotificationContext>
     /// <para><b>DefaultValue : "success"</b></para>
     /// </summary>
     [Parameter]
-    public NOTIFICATION_KIND Kind { get; set; } = NOTIFICATION_KIND.SUCCESS;
+    public NOTIFICATION_KIND? Kind { get; set; }
 
     /// <summary>
     /// Low contrast mode
@@ -80,22 +81,23 @@ public class CdsToastNotification : BaseComponent<ToastNotificationContext>
     {
         builder
             .OpenElementAnd(0, "cds-toast-notification")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "caption", Caption)
-            .SetAttributeNotNull(7, "hide-close-button", HideCloseButton)
-            .SetAttributeNotNull(8, "status-icon-description", StatusIconDescription)
-            .SetAttribute(9, "kind", Kind)
-            .SetAttributeNotNull(10, "low-contrast", LowContrast)
-            .SetAttributeNotNull(11, "open", Open)
-            .SetAttributeNotNull(12, "timeout", Timeout)
-            .SetAttributeNotNull(13, "subtitle", Subtitle)
-            .SetAttributeNotNull(14, "styles", Styles)
-            .SetAttributes(15, AdditionalAttributes)
-            .SetContent(16, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "caption", Caption)
+            .SetAttributeNotNull(8, "hide-close-button", HideCloseButton)
+            .SetAttributeNotNull(9, "status-icon-description", StatusIconDescription)
+            .SetAttributeNotNull(10, "kind", Kind)
+            .SetAttributeNotNull(11, "low-contrast", LowContrast)
+            .SetAttributeNotNull(12, "open", Open)
+            .SetAttributeNotNull(13, "timeout", Timeout)
+            .SetAttributeNotNull(14, "subtitle", Subtitle)
+            .SetAttributeNotNull(15, "styles", Styles)
+            .SetReferenceCapture(16, CaptureReference)
+            .SetContent(17, ChildContent, new())
             .CloseElement();
     }
 }

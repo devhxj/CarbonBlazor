@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.AspNetCore.Components.RenderTree;
 using shortid.Configuration;
 using System.Collections.Concurrent;
 using System.ComponentModel;
@@ -256,4 +257,34 @@ internal static class RenderTreeBuilderExtensions
         return builder;
     }
 
+
+    public static RenderTreeBuilder SetReferenceCapture(this RenderTreeBuilder builder, int sequence, Action<ElementReference> elementReferenceCaptureAction)
+    {
+        builder.AddElementReferenceCapture(sequence, elementReferenceCaptureAction);
+        return builder;
+    }
+
+    public static RenderTreeBuilder SetFunction(this RenderTreeBuilder builder, int sequence, string name, MulticastDelegate? value)
+    {
+        builder.AddAttribute(sequence, name, value);
+        return builder;
+    }
+
+    public static RenderTreeBuilder SetFunction(this RenderTreeBuilder builder, int sequence, string name, EventCallback value)
+    {
+        builder.AddAttribute(sequence, name, value);
+        return builder;
+    }
+
+    public static RenderTreeBuilder SetFunction<TArgument>(this RenderTreeBuilder builder, int sequence, string name, EventCallback<TArgument> value)
+    {
+        builder.AddAttribute(sequence, name, value);
+        return builder;
+    }
+
+    public static RenderTreeBuilder SetUpdatesAttributeNameAnd(this RenderTreeBuilder builder,string updatesAttributeName)
+    {
+        builder.SetUpdatesAttributeName(updatesAttributeName);
+        return builder;
+    }
 }

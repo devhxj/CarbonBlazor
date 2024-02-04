@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsDatePickerInput : BaseComponent
+public class CdsDatePickerInput : CdsComponentBase
 {
     /// <summary>
     /// The `&lt;input&gt;`, used for Flatpickr to grab.
@@ -152,35 +152,37 @@ public class CdsDatePickerInput : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-date-picker-input")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "input", Input)
-            .SetAttributeNotNull(7, "color-scheme", ColorScheme)
-            .SetAttributeNotNull(8, "disabled", Disabled)
-            .SetAttributeNotNull(9, "hide-label", HideLabel)
-            .SetAttributeNotNull(10, "warn", Warn)
-            .SetAttributeNotNull(11, "warn-text", WarnText)
-            .SetAttributeNotNull(12, "invalid-text", InvalidText)
-            .SetAttributeNotNull(13, "invalid", Invalid)
-            .SetAttribute(14, "kind", Kind)
-            .SetAttributeNotNull(15, "label-text", LabelText)
-            .SetAttributeNotNull(16, "pattern", Pattern)
-            .SetAttributeNotNull(17, "placeholder", Placeholder)
-            .SetAttributeNotNull(18, "readonly", Readonly)
-            .SetAttributeNotNull(19, "required", Required)
-            .SetAttribute(20, "size", Size)
-            .SetAttributeNotNull(21, "short", Short)
-            .SetAttributeNotNull(22, "type", Type)
-            .SetAttributeNotNull(23, "value", Value)
-            .SetAttributeNotNull(24, "defaultpattern", DefaultPattern)
-            .SetAttributeNotNull(25, "defaulttype", DefaultType)
-            .SetAttributeNotNull(26, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(27, "styles", Styles)
-            .SetAttributes(28, AdditionalAttributes)
-            .SetContent(29, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "input", Input)
+            .SetAttributeNotNull(8, "color-scheme", ColorScheme)
+            .SetAttributeNotNull(9, "disabled", Disabled)
+            .SetAttributeNotNull(10, "hide-label", HideLabel)
+            .SetAttributeNotNull(11, "warn", Warn)
+            .SetAttributeNotNull(12, "warn-text", WarnText)
+            .SetAttributeNotNull(13, "invalid-text", InvalidText)
+            .SetAttributeNotNull(14, "invalid", Invalid)
+            .SetAttribute(15, "kind", Kind)
+            .SetAttributeNotNull(16, "label-text", LabelText)
+            .SetAttributeNotNull(17, "pattern", Pattern)
+            .SetAttributeNotNull(18, "placeholder", Placeholder)
+            .SetAttributeNotNull(19, "readonly", Readonly)
+            .SetAttributeNotNull(20, "required", Required)
+            .SetAttributeNotNull(21, "aria-required", Required)
+            .SetAttribute(22, "size", Size)
+            .SetAttributeNotNull(23, "short", Short)
+            .SetAttributeNotNull(24, "type", Type)
+            .SetAttributeNotNull(25, "value", Value)
+            .SetAttributeNotNull(26, "defaultpattern", DefaultPattern)
+            .SetAttributeNotNull(27, "defaulttype", DefaultType)
+            .SetAttributeNotNull(28, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(29, "styles", Styles)
+            .SetReferenceCapture(30, CaptureReference)
+            .SetContent(31, ChildContent)
             .CloseElement();
     }
 }

@@ -5,12 +5,14 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using PreCompressStatic;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 try
 {
     var builder = WebApplication.CreateBuilder(args);
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
     builder.Host.UseSerilog((ctx, s, c) => c.ReadFrom.Configuration(ctx.Configuration));
 
     // Add services to the container.
@@ -29,9 +31,8 @@ try
         })
         .AddIdentityCookies();
 
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(connectionString));
+        options.UseSqlite(connectionString));
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
     builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -40,6 +41,8 @@ try
         .AddDefaultTokenProviders();
 
     builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+    builder.Services.AddHttpContextAccessor();
 
     var app = builder.Build();
 
@@ -55,9 +58,9 @@ try
         app.UseHsts();
     }
 
-    app.UseHttpsRedirection();
 
-    app.UseStaticFiles();
+    app.UseHttpsRedirection();
+    app.UsePreCompressStaticFiles();
     app.UseAntiforgery();
 
     app.MapRazorComponents<App>();

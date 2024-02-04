@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSearch : BaseComponent
+public class CdsSearch : CdsComponentBase
 {
     /// <summary>
     /// Specify an optional value for the autocomplete property on the underlying &lt;input&gt;,
@@ -99,27 +99,28 @@ public class CdsSearch : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-search")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "autocomplete", AutoComplete)
-            .SetAttributeNotNull(7, "close-button-label-text", CloseButtonLabelText)
-            .SetAttributeNotNull(8, "disabled", Disabled)
-            .SetAttributeNotNull(9, "expandable", Expandable)
-            .SetAttributeNotNull(10, "expanded", Expanded)
-            .SetAttributeNotNull(11, "hasCustomIcon", HasCustomIcon)
-            .SetAttributeNotNull(12, "label-text", LabelText)
-            .SetAttributeNotNull(13, "name", Name)
-            .SetAttributeNotNull(14, "placeholder", Placeholder)
-            .SetAttribute(15, "size", Size)
-            .SetAttributeNotNull(16, "type", Type)
-            .SetAttributeNotNull(17, "value", Value)
-            .SetAttributeNotNull(18, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(19, "styles", Styles)
-            .SetAttributes(20, AdditionalAttributes)
-            .SetContent(21, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "autocomplete", AutoComplete)
+            .SetAttributeNotNull(8, "close-button-label-text", CloseButtonLabelText)
+            .SetAttributeNotNull(9, "disabled", Disabled)
+            .SetAttributeNotNull(10, "expandable", Expandable)
+            .SetAttributeNotNull(11, "expanded", Expanded)
+            .SetAttributeNotNull(12, "hasCustomIcon", HasCustomIcon)
+            .SetAttributeNotNull(13, "label-text", LabelText)
+            .SetAttributeNotNull(14, "name", Name)
+            .SetAttributeNotNull(15, "placeholder", Placeholder)
+            .SetAttribute(16, "size", Size)
+            .SetAttributeNotNull(17, "type", Type)
+            .SetAttributeNotNull(18, "value", Value)
+            .SetAttributeNotNull(19, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(20, "styles", Styles)
+            .SetReferenceCapture(21, CaptureReference)
+            .SetContent(22, ChildContent)
             .CloseElement();
     }
 }

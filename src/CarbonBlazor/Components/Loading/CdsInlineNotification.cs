@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
@@ -16,8 +17,48 @@ public class InlineNotificationContext
     public string TitleSlot = "title";
 }
 
-public class CdsInlineNotification : BaseComponent<InlineNotificationContext>
+public class CdsInlineNotification : CdsComponentBase<InlineNotificationContext>, IDisposable
 {
+    EditContext? _previousEditContext;
+    readonly EventHandler<ValidationStateChangedEventArgs> _validationStateChangedHandler;
+
+    [Parameter]
+    public object? Model { get; set; }
+
+    [CascadingParameter]
+    private EditContext? CurrentEditContext { get; set; }
+
+    public CdsInlineNotification() : base()
+    {
+        _validationStateChangedHandler = delegate
+        {
+            StateHasChanged();
+        };
+    }
+
+    protected override void OnParametersSet()
+    {
+        if (CurrentEditContext is not null && CurrentEditContext != _previousEditContext)
+        {
+            DetachValidationStateChangedListener();
+            CurrentEditContext.OnValidationStateChanged += _validationStateChangedHandler;
+            _previousEditContext = CurrentEditContext;
+        }
+    }
+
+    void IDisposable.Dispose()
+    {
+        DetachValidationStateChangedListener();
+    }
+
+    private void DetachValidationStateChangedListener()
+    {
+        if (_previousEditContext != null)
+        {
+            _previousEditContext.OnValidationStateChanged -= _validationStateChangedHandler;
+        }
+    }
+
     /// <summary>
     /// `true` to hide the close button.
     /// <para><b>DefaultValue : false</b></para>
@@ -36,7 +77,7 @@ public class CdsInlineNotification : BaseComponent<InlineNotificationContext>
     /// <para><b>DefaultValue : "success"</b></para>
     /// </summary>
     [Parameter]
-    public NOTIFICATION_KIND Kind { get; set; } = NOTIFICATION_KIND.SUCCESS;
+    public NOTIFICATION_KIND? Kind { get; set; }
 
     /// <summary>
     /// Low contrast mode
@@ -72,23 +113,41 @@ public class CdsInlineNotification : BaseComponent<InlineNotificationContext>
 
     protected override void BuildRenderTree(RenderTreeBuilder builder)
     {
+        var kind = Kind;
+        var subtitle = Subtitle;
+        var open = Open;
+        if (CurrentEditContext is not null)
+        {
+            var messages = Model is null
+                ? CurrentEditContext.GetValidationMessages()
+                : CurrentEditContext.GetValidationMessages(new FieldIdentifier(Model, string.Empty));
+
+            open = messages.Any();
+            if (open == true)
+            {
+                subtitle ??= string.Join(" ", messages);
+                kind ??= NOTIFICATION_KIND.ERROR;
+            }
+        }
+
         builder
             .OpenElementAnd(0, "cds-inline-notification")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "hide-close-button", HideCloseButton)
-            .SetAttributeNotNull(7, "status-icon-description", StatusIconDescription)
-            .SetAttribute(8, "kind", Kind)
-            .SetAttributeNotNull(9, "low-contrast", LowContrast)
-            .SetAttributeNotNull(10, "open", Open)
-            .SetAttributeNotNull(11, "timeout", Timeout)
-            .SetAttributeNotNull(12, "subtitle", Subtitle)
-            .SetAttributeNotNull(13, "styles", Styles)
-            .SetAttributes(14, AdditionalAttributes)
-            .SetContent(15, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "hide-close-button", HideCloseButton)
+            .SetAttributeNotNull(8, "status-icon-description", StatusIconDescription)
+            .SetAttribute(9, "kind", kind)
+            .SetAttributeNotNull(10, "low-contrast", LowContrast)
+            .SetAttributeNotNull(11, "open", open)
+            .SetAttributeNotNull(12, "timeout", Timeout)
+            .SetAttributeNotNull(13, "subtitle", subtitle)
+            .SetAttributeNotNull(14, "styles", Styles)
+            .SetReferenceCapture(15, CaptureReference)
+            .SetContent(16, ChildContent, new())
             .CloseElement();
     }
 }

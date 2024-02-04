@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsLink : BaseComponent
+public class CdsLink : CdsComponentBase
 {
     /// <summary>
     /// `true` if the link should be disabled.
@@ -96,27 +96,28 @@ public class CdsLink : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-link")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "download", Download)
-            .SetAttributeNotNull(8, "href", Href)
-            .SetAttributeNotNull(9, "hreflang", Hreflang)
-            .SetAttributeNotNull(10, "inline", Inline)
-            .SetAttributeNotNull(11, "link-role", LinkRole)
-            .SetAttributeNotNull(12, "ping", Ping)
-            .SetAttributeNotNull(13, "rel", Rel)
-            .SetAttributeNotNull(14, "size", Size)
-            .SetAttributeNotNull(15, "target", Target)
-            .SetAttributeNotNull(16, "type", Type)
-            .SetAttributeNotNull(17, "visited", Visited)
-            .SetAttributeNotNull(18, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(19, "styles", Styles)
-            .SetAttributes(20, AdditionalAttributes)
-            .SetContent(21, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "download", Download)
+            .SetAttributeNotNull(9, "href", Href)
+            .SetAttributeNotNull(10, "hreflang", Hreflang)
+            .SetAttributeNotNull(11, "inline", Inline)
+            .SetAttributeNotNull(12, "link-role", LinkRole)
+            .SetAttributeNotNull(13, "ping", Ping)
+            .SetAttributeNotNull(14, "rel", Rel)
+            .SetAttributeNotNull(15, "size", Size)
+            .SetAttributeNotNull(16, "target", Target)
+            .SetAttributeNotNull(17, "type", Type)
+            .SetAttributeNotNull(18, "visited", Visited)
+            .SetAttributeNotNull(19, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(20, "styles", Styles)
+            .SetReferenceCapture(21, CaptureReference)
+            .SetContent(22, ChildContent)
             .CloseElement();
     }
 }

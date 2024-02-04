@@ -10,7 +10,7 @@ public class FormGroupContext
     public string LebelDescriptionSlot = "lebel-description";
 }
 
-public class CdsFormGroup : BaseComponent<FormGroupContext>
+public class CdsFormGroup : CdsComponentBase<FormGroupContext>
 {
     /// <summary>
     /// Specify whether the Form Group is invalid
@@ -55,19 +55,20 @@ public class CdsFormGroup : BaseComponent<FormGroupContext>
     {
         builder
             .OpenElementAnd(0, "cds-form-group")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "invalid", Invalid)
-            .SetAttributeNotNull(7, "legend-id", LegendId)
-            .SetAttributeNotNull(8, "legend-text", LegendText)
-            .SetAttributeNotNull(9, "message", Message)
-            .SetAttributeNotNull(10, "message-text", MessageText)
-            .SetAttributeNotNull(11, "styles", Styles)
-            .SetAttributes(12, AdditionalAttributes)
-            .SetContent(13, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "invalid", Invalid)
+            .SetAttributeNotNull(8, "legend-id", LegendId)
+            .SetAttributeNotNull(9, "legend-text", LegendText)
+            .SetAttributeNotNull(10, "message", Message)
+            .SetAttributeNotNull(11, "message-text", MessageText)
+            .SetAttributeNotNull(12, "styles", Styles)
+            .SetReferenceCapture(13, CaptureReference)
+            .SetContent(14, ChildContent, new())
             .CloseElement();
     }
 }

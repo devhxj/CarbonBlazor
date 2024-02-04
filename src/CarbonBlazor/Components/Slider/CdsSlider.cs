@@ -21,7 +21,7 @@ public class SliderContext
     public string MinTextSlot = "min-text";
 }
 
-public class CdsSlider : BaseComponent<SliderContext>
+public class CdsSlider : CdsComponentBase<SliderContext>
 {
     /// <summary>
     /// `true` if the check box should be disabled.
@@ -165,34 +165,36 @@ public class CdsSlider : BaseComponent<SliderContext>
     {
         builder
             .OpenElementAnd(0, "cds-slider")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "required", Required)
-            .SetAttributeNotNull(8, "readonly", Readonly)
-            .SetAttributeNotNull(9, "label-text", LabelText)
-            .SetAttributeNotNull(10, "max-label", MaxLabel)
-            .SetAttributeNotNull(11, "min-label", MinLabel)
-            .SetAttributeNotNull(12, "formatmaxtext", FormatMaxText)
-            .SetAttributeNotNull(13, "formatmintext", FormatMinText)
-            .SetAttributeNotNull(14, "max", Max)
-            .SetAttributeNotNull(15, "min", Min)
-            .SetAttributeNotNull(16, "name", Name)
-            .SetAttributeNotNull(17, "invalid", Invalid)
-            .SetAttributeNotNull(18, "invalid-text", InvalidText)
-            .SetAttributeNotNull(19, "warn", Warn)
-            .SetAttributeNotNull(20, "warn-text", WarnText)
-            .SetAttributeNotNull(21, "step", Step)
-            .SetAttributeNotNull(22, "step-multiplier", StepMultiplier)
-            .SetAttributeNotNull(23, "value", Value)
-            .SetAttributeNotNull(24, "isValid", IsValid)
-            .SetAttributeNotNull(25, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(26, "styles", Styles)
-            .SetAttributes(27, AdditionalAttributes)
-            .SetContent(28, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "required", Required)
+            .SetAttributeNotNull(9, "aria-required", Required)
+            .SetAttributeNotNull(10, "readonly", Readonly)
+            .SetAttributeNotNull(11, "label-text", LabelText)
+            .SetAttributeNotNull(12, "max-label", MaxLabel)
+            .SetAttributeNotNull(13, "min-label", MinLabel)
+            .SetAttributeNotNull(14, "formatmaxtext", FormatMaxText)
+            .SetAttributeNotNull(15, "formatmintext", FormatMinText)
+            .SetAttributeNotNull(16, "max", Max)
+            .SetAttributeNotNull(17, "min", Min)
+            .SetAttributeNotNull(18, "name", Name)
+            .SetAttributeNotNull(19, "invalid", Invalid)
+            .SetAttributeNotNull(20, "invalid-text", InvalidText)
+            .SetAttributeNotNull(21, "warn", Warn)
+            .SetAttributeNotNull(22, "warn-text", WarnText)
+            .SetAttributeNotNull(23, "step", Step)
+            .SetAttributeNotNull(24, "step-multiplier", StepMultiplier)
+            .SetAttributeNotNull(25, "value", Value)
+            .SetAttributeNotNull(26, "isValid", IsValid)
+            .SetAttributeNotNull(27, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(28, "styles", Styles)
+            .SetReferenceCapture(29, CaptureReference)
+            .SetContent(30, ChildContent, new())
             .CloseElement();
     }
 }

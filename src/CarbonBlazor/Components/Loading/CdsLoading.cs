@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsLoading : BaseComponent
+public class CdsLoading : CdsComponentBase
 {
     /// <summary>
     /// The assistive text for the spinner icon.
@@ -42,18 +42,19 @@ public class CdsLoading : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-loading")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "assistive-text", AssistiveText)
-            .SetAttribute(7, "type", Type)
-            .SetAttributeNotNull(8, "overlay", Overlay)
-            .SetAttributeNotNull(9, "inactive", Inactive)
-            .SetAttributeNotNull(10, "styles", Styles)
-            .SetAttributes(11, AdditionalAttributes)
-            .SetContent(12, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "assistive-text", AssistiveText)
+            .SetAttribute(8, "type", Type)
+            .SetAttributeNotNull(9, "overlay", Overlay)
+            .SetAttributeNotNull(10, "inactive", Inactive)
+            .SetAttributeNotNull(11, "styles", Styles)
+            .SetReferenceCapture(12, CaptureReference)
+            .SetContent(13, ChildContent)
             .CloseElement();
     }
 }

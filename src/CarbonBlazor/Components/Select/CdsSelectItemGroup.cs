@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSelectItemGroup : BaseComponent
+public class CdsSelectItemGroup : CdsComponentBase
 {
     /// <summary>
     /// `true` to disable this option.
@@ -21,15 +21,16 @@ public class CdsSelectItemGroup : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-select-item-group")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "label", Label)
-            .SetAttributes(8, AdditionalAttributes)
-            .SetContent(9, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "label", Label)
+            .SetReferenceCapture(9, CaptureReference)
+            .SetContent(10, ChildContent)
             .CloseElement();
     }
 }

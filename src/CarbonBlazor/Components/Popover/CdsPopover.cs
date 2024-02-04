@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsPopover : BaseComponent
+public class CdsPopover : CdsComponentBase
 {
     /// <summary>
     /// Specify direction of alignment
@@ -55,20 +55,21 @@ public class CdsPopover : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-popover")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "align", Align)
-            .SetAttributeNotNull(7, "caret", Caret)
-            .SetAttributeNotNull(8, "dropShadow", DropShadow)
-            .SetAttributeNotNull(9, "highContrast", HighContrast)
-            .SetAttributeNotNull(10, "open", Open)
-            .SetAttributeNotNull(11, "tabTip", TabTip)
-            .SetAttributeNotNull(12, "styles", Styles)
-            .SetAttributes(13, AdditionalAttributes)
-            .SetContent(14, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "align", Align)
+            .SetAttributeNotNull(8, "caret", Caret)
+            .SetAttributeNotNull(9, "dropShadow", DropShadow)
+            .SetAttributeNotNull(10, "highContrast", HighContrast)
+            .SetAttributeNotNull(11, "open", Open)
+            .SetAttributeNotNull(12, "tabTip", TabTip)
+            .SetAttributeNotNull(13, "styles", Styles)
+            .SetReferenceCapture(14, CaptureReference)
+            .SetContent(15, ChildContent)
             .CloseElement();
     }
 }

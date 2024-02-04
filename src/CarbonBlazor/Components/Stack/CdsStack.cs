@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsStack : BaseComponent
+public class CdsStack : CdsComponentBase
 {
     /// <summary>
     /// Specify the orientation of them items in the Stack
@@ -35,17 +35,18 @@ public class CdsStack : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-stack")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttribute(6, "orientation", Orientation)
-            .SetAttributeNotNull(7, "gap", Gap)
-            .SetAttributeNotNull(8, "use-custom-gap-value", UseCustomGapValue)
-            .SetAttributeNotNull(9, "styles", Styles)
-            .SetAttributes(10, AdditionalAttributes)
-            .SetContent(11, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttribute(7, "orientation", Orientation)
+            .SetAttributeNotNull(8, "gap", Gap)
+            .SetAttributeNotNull(9, "use-custom-gap-value", UseCustomGapValue)
+            .SetAttributeNotNull(10, "styles", Styles)
+            .SetReferenceCapture(11, CaptureReference)
+            .SetContent(12, ChildContent)
             .CloseElement();
     }
 }

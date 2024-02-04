@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsAccordion : BaseComponent
+public class CdsAccordion : CdsComponentBase
 {
     /// <summary>
     /// Accordion size should be sm, md, lg.
@@ -35,17 +35,18 @@ public class CdsAccordion : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-accordion")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttribute(6, "size", Size)
-            .SetAttribute(7, "alignment", Alignment)
-            .SetAttributeNotNull(8, "isFlush", IsFlush)
-            .SetAttributeNotNull(9, "styles", Styles)
-            .SetAttributes(10, AdditionalAttributes)
-            .SetContent(11, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttribute(7, "size", Size)
+            .SetAttribute(8, "alignment", Alignment)
+            .SetAttributeNotNull(9, "isFlush", IsFlush)
+            .SetAttributeNotNull(10, "styles", Styles)
+            .SetReferenceCapture(11, CaptureReference)
+            .SetContent(12, ChildContent)
             .CloseElement();
     }
 }

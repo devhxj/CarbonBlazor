@@ -218,3 +218,175 @@
         box-shadow: inset 0rem 0rem 0rem .1rem #17E1E6, 0rem 0rem 1.5rem 0rem #17E1E6;
     }
 }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+button, select, input, textarea {
+    border-radius: 0;
+    font-family: inherit
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+body {
+    background-color: var(--cds-background,#ffffff);
+    color: var(--cds-text-primary,#161616);
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+    blockquote::before, blockquote::after, q::before, q::after {
+        content: "";
+        content: none
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+html {
+    box-sizing: border-box
+}
+
+*, *::before, *::after {
+    box-sizing: inherit
+}
+
+html {
+    font-size: 100%
+}
+
+body {
+    font-weight: 400;
+    font-family: ibm plex sans,system-ui,-apple-system,BlinkMacSystemFont,'.sfnstext-regular',sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility
+}
+
+code {
+    font-family: ibm plex mono,system-ui,-apple-system,BlinkMacSystemFont,'.sfnstext-regular',monospace
+}
+
+strong {
+    font-weight: 600
+}
+
+@media screen and (-ms-high-contrast:active) {
+    svg {
+        fill: ButtonText
+    }
+}
+
+h1 {
+    font-size: var(--cds-heading-06-font-size,2.625rem);
+    font-weight: var(--cds-heading-06-font-weight,300);
+    line-height: var(--cds-heading-06-line-height,1.199);
+    letter-spacing: var(--cds-heading-06-letter-spacing,0)
+}
+
+h2 {
+    font-size: var(--cds-heading-05-font-size,2rem);
+    font-weight: var(--cds-heading-05-font-weight,400);
+    line-height: var(--cds-heading-05-line-height,1.25);
+    letter-spacing: var(--cds-heading-05-letter-spacing,0)
+}
+
+h3 {
+    font-size: var(--cds-heading-04-font-size,1.75rem);
+    font-weight: var(--cds-heading-04-font-weight,400);
+    line-height: var(--cds-heading-04-line-height,1.28572);
+    letter-spacing: var(--cds-heading-04-letter-spacing,0)
+}
+
+h4 {
+    font-size: var(--cds-heading-03-font-size,1.25rem);
+    font-weight: var(--cds-heading-03-font-weight,400);
+    line-height: var(--cds-heading-03-line-height,1.4);
+    letter-spacing: var(--cds-heading-03-letter-spacing,0)
+}
+
+h5 {
+    font-size: var(--cds-heading-02-font-size,1rem);
+    font-weight: var(--cds-heading-02-font-weight,600);
+    line-height: var(--cds-heading-02-line-height,1.5);
+    letter-spacing: var(--cds-heading-02-letter-spacing,0)
+}
+
+h6 {
+    font-size: var(--cds-heading-01-font-size,0.875rem);
+    font-weight: var(--cds-heading-01-font-weight,600);
+    line-height: var(--cds-heading-01-line-height,1.42857);
+    letter-spacing: var(--cds-heading-01-letter-spacing,0.16px)
+}
+
+p {
+    font-size: var(--cds-body-02-font-size,1rem);
+    font-weight: var(--cds-body-02-font-weight,400);
+    line-height: var(--cds-body-02-line-height,1.5);
+    letter-spacing: var(--cds-body-02-letter-spacing,0)
+}
+
+a {
+    color: var(--cds-link-primary,#0062fe)
+}
+
+em {
+    font-style: italic
+}
+
+@keyframes cds-preload-animation {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#cds-preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cds-background, #f8f9fa);
+    transition: opacity .5s linear;
+    z-index: 9999;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cds-preload-indicator {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--cds-text-primary,#000);
+    border-top-color: transparent;
+    border-radius: 100%;
+    animation: cds-preload-animation infinite 0.75s linear;
+}
+
+cds-header ~ cds-side-nav {
+    margin-top: 3rem;
+    height: calc(100% - 3rem);
+}

@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CarbonBlazor;
 
@@ -21,7 +23,7 @@ public class TextInputContext
     public string ValidityMessageSlot = "validity-message";
 }
 
-public class CdsTextInput : BaseComponent<TextInputContext>
+public class CdsTextInput : CdsInputBase<string?>
 {
     /// <summary>
     /// May be any of the standard HTML autocomplete options
@@ -94,11 +96,11 @@ public class CdsTextInput : BaseComponent<TextInputContext>
     [Parameter]
     public string? Label { get; set; }
 
-    /// <summary>
-    /// Name for the input in the `FormData`
-    /// </summary>
-    [Parameter]
-    public string? Name { get; set; }
+    ///// <summary>
+    ///// Name for the input in the `FormData`
+    ///// </summary>
+    //[Parameter]
+    //public string? Name { get; set; }
 
     /// <summary>
     /// Pattern to validate the input against for HTML validity checking
@@ -216,54 +218,75 @@ public class CdsTextInput : BaseComponent<TextInputContext>
     [Parameter]
     public string? ValidityMessage { get; set; }
 
-    /// <summary>
-    /// The value of the input.
-    /// </summary>
     [Parameter]
-    public string? Value { get; set; }
+    public RenderFragment<TextInputContext>? ChildContent { get; set; }
+
+    void SetValue(string? value) => base.CurrentValueAsString = value;
+
+    bool? IsValid()
+    {
+        if (Invalid.HasValue)
+            return Invalid.Value;
+
+        if (!EditContext.IsValid(FieldIdentifier))
+            return true;
+
+        return null;
+    }
 
     protected override void BuildRenderTree(RenderTreeBuilder builder)
     {
         builder
             .OpenElementAnd(0, "cds-text-input")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "autocomplete", Autocomplete)
-            .SetAttributeNotNull(7, "autofocus", Autofocus)
-            .SetAttributeNotNull(8, "disabled", Disabled)
-            .SetAttributeNotNull(9, "enable-counter", EnableCounter)
-            .SetAttributeNotNull(10, "helper-text", HelperText)
-            .SetAttributeNotNull(11, "invalid-text", InvalidText)
-            .SetAttributeNotNull(12, "max-count", MaxCount)
-            .SetAttributeNotNull(13, "warn", Warn)
-            .SetAttributeNotNull(14, "warn-text", WarnText)
-            .SetAttributeNotNull(15, "hide-label", HideLabel)
-            .SetAttributeNotNull(16, "label", Label)
-            .SetAttributeNotNull(17, "name", Name)
-            .SetAttributeNotNull(18, "pattern", Pattern)
-            .SetAttributeNotNull(19, "placeholder", Placeholder)
-            .SetAttributeNotNull(20, "readonly", Readonly)
-            .SetAttributeNotNull(21, "hidePasswordLabel", HidePasswordLabel)
-            .SetAttributeNotNull(22, "showPasswordLabel", ShowPasswordLabel)
-            .SetAttributeNotNull(23, "show-password-visibility-toggle", ShowPasswordVisibilityToggle)
-            .SetAttribute(24, "size", Size)
-            .SetAttributeNotNull(25, "inline", Inline)
-            .SetAttribute(26, "tooltipAlignment", TooltipAlignment)
-            .SetAttribute(27, "tooltipDirection", TooltipDirection)
-            .SetAttribute(28, "type", Type)
-            .SetAttributeNotNull(29, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(30, "styles", Styles)
-            .SetAttributeNotNull(31, "invalid", Invalid)
-            .SetAttributeNotNull(32, "required", Required)
-            .SetAttributeNotNull(33, "required-validity-message", RequiredValidityMessage)
-            .SetAttributeNotNull(34, "validity-message", ValidityMessage)
-            .SetAttributeNotNull(35, "value", Value)
-            .SetAttributes(36, AdditionalAttributes)
-            .SetContent(37, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "autocomplete", Autocomplete)
+            .SetAttributeNotNull(8, "autofocus", Autofocus)
+            .SetAttributeNotNull(9, "disabled", Disabled)
+            .SetAttributeNotNull(10, "enable-counter", EnableCounter)
+            .SetAttributeNotNull(11, "helper-text", HelperText)
+            .SetAttributeNotNull(12, "invalid-text", InvalidText)
+            .SetAttributeNotNull(13, "max-count", MaxCount)
+            .SetAttributeNotNull(14, "warn", Warn)
+            .SetAttributeNotNull(15, "warn-text", WarnText)
+            .SetAttributeNotNull(16, "hide-label", HideLabel)
+            .SetAttributeNotNull(17, "label", Label)
+            .SetAttributeNotNull(18, "name", base.NameAttributeValue)
+            .SetAttributeNotNull(19, "pattern", Pattern)
+            .SetAttributeNotNull(20, "placeholder", Placeholder)
+            .SetAttributeNotNull(21, "readonly", Readonly)
+            .SetAttributeNotNull(22, "hidePasswordLabel", HidePasswordLabel)
+            .SetAttributeNotNull(23, "showPasswordLabel", ShowPasswordLabel)
+            .SetAttributeNotNull(24, "show-password-visibility-toggle", ShowPasswordVisibilityToggle)
+            .SetAttribute(25, "size", Size)
+            .SetAttributeNotNull(26, "inline", Inline)
+            .SetAttribute(27, "tooltipAlignment", TooltipAlignment)
+            .SetAttribute(28, "tooltipDirection", TooltipDirection)
+            .SetAttribute(29, "type", Type)
+            .SetAttributeNotNull(30, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(31, "styles", Styles)
+            .SetAttributeNotNull(32, "invalid", IsValid())
+            .SetAttributeNotNull(33, "required", Required)
+            .SetAttributeNotNull(34, "aria-required", Required)
+            .SetAttributeNotNull(35, "required-validity-message", RequiredValidityMessage)
+            .SetAttributeNotNull(36, "validity-message", ValidityMessage)
+            .SetAttributeNotNull(37, "class", base.CssClass)
+            .SetAttributeNotNull(38, "value", base.CurrentValueAsString)
+            .SetAttribute(39, "onchange", EventCallback.Factory.CreateBinder<string?>(this, SetValue, base.CurrentValueAsString))
+            .SetUpdatesAttributeNameAnd("value")
+            .SetContent(40, ChildContent, new())
             .CloseElement();
+    }
+
+    protected override bool TryParseValueFromString(string? value, out string? result, [NotNullWhen(false)] out string? validationErrorMessage)
+    {
+        result = value;
+        validationErrorMessage = null;
+        return true;
     }
 }
 

@@ -11,7 +11,7 @@ public class LayerContext
     public string ChildrenSlot = "children";
 }
 
-public class CdsLayer : BaseComponent<LayerContext>
+public class CdsLayer : CdsComponentBase<LayerContext>
 {
     /// <summary>
     /// Specify the layer level and override any existing levels based on hierarchy
@@ -33,16 +33,17 @@ public class CdsLayer : BaseComponent<LayerContext>
     {
         builder
             .OpenElementAnd(0, "cds-layer")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "level", Level)
-            .SetAttributeNotNull(7, "layers", Layers)
-            .SetAttributeNotNull(8, "styles", Styles)
-            .SetAttributes(9, AdditionalAttributes)
-            .SetContent(10, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "level", Level)
+            .SetAttributeNotNull(8, "layers", Layers)
+            .SetAttributeNotNull(9, "styles", Styles)
+            .SetReferenceCapture(10, CaptureReference)
+            .SetContent(11, ChildContent, new())
             .CloseElement();
     }
 }

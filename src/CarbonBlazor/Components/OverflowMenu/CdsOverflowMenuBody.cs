@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsOverflowMenuBody : BaseComponent
+public class CdsOverflowMenuBody : CdsComponentBase
 {
     /// <summary>
     /// <para><b>Type : CDSOverflowMenuItem | null</b></para>
@@ -66,22 +66,23 @@ public class CdsOverflowMenuBody : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-overflow-menu-body")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "selected", Selected)
-            .SetAttribute(7, "size", Size)
-            .SetAttributeNotNull(8, "styles", Styles)
-            .SetAttribute(9, "direction", Direction)
-            .SetAttributeNotNull(10, "flipped", Flipped)
-            .SetAttributeNotNull(11, "container", Container)
-            .SetAttributeNotNull(12, "position", Position)
-            .SetAttributeNotNull(13, "floating_menu", FLOATING_MENU)
-            .SetAttributeNotNull(14, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributes(15, AdditionalAttributes)
-            .SetContent(16, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "selected", Selected)
+            .SetAttribute(8, "size", Size)
+            .SetAttributeNotNull(9, "styles", Styles)
+            .SetAttribute(10, "direction", Direction)
+            .SetAttributeNotNull(11, "flipped", Flipped)
+            .SetAttributeNotNull(12, "container", Container)
+            .SetAttributeNotNull(13, "position", Position)
+            .SetAttributeNotNull(14, "floating_menu", FLOATING_MENU)
+            .SetAttributeNotNull(15, "shadowRootOptions", ShadowRootOptions)
+            .SetReferenceCapture(16, CaptureReference)
+            .SetContent(17, ChildContent)
             .CloseElement();
     }
 }

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsRadioButton : BaseComponent
+public class CdsRadioButton : CdsComponentBase
 {
     /// <summary>
     /// `true` if this radio button should be checked.
@@ -101,27 +101,28 @@ public class CdsRadioButton : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-radio-button")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "checked", Checked)
-            .SetAttributeNotNull(7, "data-table", DataTable)
-            .SetAttributeNotNull(8, "disabledItem", DisabledItem)
-            .SetAttributeNotNull(9, "disabled", Disabled)
-            .SetAttributeNotNull(10, "hide-label", HideLabel)
-            .SetAttributeNotNull(11, "invalid", Invalid)
-            .SetAttribute(12, "label-position", LabelPosition)
-            .SetAttributeNotNull(13, "label-text", LabelText)
-            .SetAttributeNotNull(14, "name", Name)
-            .SetAttribute(15, "orientation", Orientation)
-            .SetAttributeNotNull(16, "readOnly", ReadOnly)
-            .SetAttributeNotNull(17, "value", Value)
-            .SetAttributeNotNull(18, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(19, "styles", Styles)
-            .SetAttributes(20, AdditionalAttributes)
-            .SetContent(21, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "checked", Checked)
+            .SetAttributeNotNull(8, "data-table", DataTable)
+            .SetAttributeNotNull(9, "disabledItem", DisabledItem)
+            .SetAttributeNotNull(10, "disabled", Disabled)
+            .SetAttributeNotNull(11, "hide-label", HideLabel)
+            .SetAttributeNotNull(12, "invalid", Invalid)
+            .SetAttribute(13, "label-position", LabelPosition)
+            .SetAttributeNotNull(14, "label-text", LabelText)
+            .SetAttributeNotNull(15, "name", Name)
+            .SetAttribute(16, "orientation", Orientation)
+            .SetAttributeNotNull(17, "readOnly", ReadOnly)
+            .SetAttributeNotNull(18, "value", Value)
+            .SetAttributeNotNull(19, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(20, "styles", Styles)
+            .SetReferenceCapture(21, CaptureReference)
+            .SetContent(22, ChildContent)
             .CloseElement();
     }
 }

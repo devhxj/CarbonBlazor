@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsAccordionItem : BaseComponent
+public class CdsAccordionItem : CdsComponentBase
 {
     /// <summary>
     /// `true` if the accordion item should be disabled.
@@ -28,16 +28,17 @@ public class CdsAccordionItem : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-accordion-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "open", Open)
-            .SetAttributeNotNull(8, "styles", Styles)
-            .SetAttributes(9, AdditionalAttributes)
-            .SetContent(10, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "open", Open)
+            .SetAttributeNotNull(9, "styles", Styles)
+            .SetReferenceCapture(10, CaptureReference)
+            .SetContent(11, ChildContent)
             .CloseElement();
     }
 }

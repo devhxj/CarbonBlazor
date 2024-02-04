@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsStructuredList : BaseComponent
+public class CdsStructuredList : CdsComponentBase
 {
     /// <summary>
     /// The `name` attribute for the `&lt;input&gt;` for selection.
@@ -48,19 +48,20 @@ public class CdsStructuredList : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-structured-list")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "selection-name", SelectionName)
-            .SetAttributeNotNull(7, "condensed", Condensed)
-            .SetAttributeNotNull(8, "flush", Flush)
-            .SetAttributeNotNull(9, "selectorrowswithheader", SelectorRowsWithHeader)
-            .SetAttributeNotNull(10, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(11, "styles", Styles)
-            .SetAttributes(12, AdditionalAttributes)
-            .SetContent(13, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "selection-name", SelectionName)
+            .SetAttributeNotNull(8, "condensed", Condensed)
+            .SetAttributeNotNull(9, "flush", Flush)
+            .SetAttributeNotNull(10, "selectorrowswithheader", SelectorRowsWithHeader)
+            .SetAttributeNotNull(11, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(12, "styles", Styles)
+            .SetReferenceCapture(13, CaptureReference)
+            .SetContent(14, ChildContent)
             .CloseElement();
     }
 }

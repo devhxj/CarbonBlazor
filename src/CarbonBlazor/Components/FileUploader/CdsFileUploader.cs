@@ -10,7 +10,7 @@ public class FileUploaderContext
     public string LebelDescriptionSlot = "lebel-description";
 }
 
-public class CdsFileUploader : BaseComponent<FileUploaderContext>
+public class CdsFileUploader : CdsComponentBase<FileUploaderContext>
 {
     /// <summary>
     /// `true` if the file uploader should disabled.
@@ -41,17 +41,18 @@ public class CdsFileUploader : BaseComponent<FileUploaderContext>
     {
         builder
             .OpenElementAnd(0, "cds-file-uploader")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "label-description", LabelDescription)
-            .SetAttributeNotNull(8, "label-title", LabelTitle)
-            .SetAttributeNotNull(9, "styles", Styles)
-            .SetAttributes(10, AdditionalAttributes)
-            .SetContent(11, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "label-description", LabelDescription)
+            .SetAttributeNotNull(9, "label-title", LabelTitle)
+            .SetAttributeNotNull(10, "styles", Styles)
+            .SetReferenceCapture(11, CaptureReference)
+            .SetContent(12, ChildContent, new())
             .CloseElement();
     }
 }

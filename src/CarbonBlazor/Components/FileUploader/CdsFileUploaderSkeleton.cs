@@ -2,19 +2,20 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsFileUploaderSkeleton : BaseComponent
+public class CdsFileUploaderSkeleton : CdsComponentBase
 {
     protected override void BuildRenderTree(RenderTreeBuilder builder)
     {
         builder
             .OpenElementAnd(0, "cds-file-uploader-skeleton")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributes(6, AdditionalAttributes)
-            .SetContent(7, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetReferenceCapture(7, CaptureReference)
+            .SetContent(8, ChildContent)
             .CloseElement();
     }
 }

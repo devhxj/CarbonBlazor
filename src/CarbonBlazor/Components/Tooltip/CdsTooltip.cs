@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTooltip : BaseComponent
+public class CdsTooltip : CdsComponentBase
 {
     /// <summary>
     /// `true` if this tooltip is in a data table row
@@ -105,27 +105,28 @@ public class CdsTooltip : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-tooltip")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "data-table", DataTable)
-            .SetAttributeNotNull(7, "closeOnActivation", CloseOnActivation)
-            .SetAttributeNotNull(8, "defaultOpen", DefaultOpen)
-            .SetAttributeNotNull(9, "enter-delay-ms", EnterDelayMs)
-            .SetAttributeNotNull(10, "leave-delay-ms", LeaveDelayMs)
-            .SetAttributeNotNull(11, "size", Size)
-            .SetAttributeNotNull(12, "toolbar-action", ToolbarAction)
-            .SetAttributeNotNull(13, "align", Align)
-            .SetAttributeNotNull(14, "caret", Caret)
-            .SetAttributeNotNull(15, "dropShadow", DropShadow)
-            .SetAttributeNotNull(16, "highContrast", HighContrast)
-            .SetAttributeNotNull(17, "open", Open)
-            .SetAttributeNotNull(18, "tabTip", TabTip)
-            .SetAttributeNotNull(19, "styles", Styles)
-            .SetAttributes(20, AdditionalAttributes)
-            .SetContent(21, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "data-table", DataTable)
+            .SetAttributeNotNull(8, "closeOnActivation", CloseOnActivation)
+            .SetAttributeNotNull(9, "defaultOpen", DefaultOpen)
+            .SetAttributeNotNull(10, "enter-delay-ms", EnterDelayMs)
+            .SetAttributeNotNull(11, "leave-delay-ms", LeaveDelayMs)
+            .SetAttributeNotNull(12, "size", Size)
+            .SetAttributeNotNull(13, "toolbar-action", ToolbarAction)
+            .SetAttributeNotNull(14, "align", Align)
+            .SetAttributeNotNull(15, "caret", Caret)
+            .SetAttributeNotNull(16, "dropShadow", DropShadow)
+            .SetAttributeNotNull(17, "highContrast", HighContrast)
+            .SetAttributeNotNull(18, "open", Open)
+            .SetAttributeNotNull(19, "tabTip", TabTip)
+            .SetAttributeNotNull(20, "styles", Styles)
+            .SetReferenceCapture(21, CaptureReference)
+            .SetContent(22, ChildContent)
             .CloseElement();
     }
 }

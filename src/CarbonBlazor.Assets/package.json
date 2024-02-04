@@ -1,15 +1,22 @@
 {
-  "name": "carbonblazor.assets",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "carbonblazor-assets",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.56.0"
+    "sass": "^1.70.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "dependencies": {
+    "@carbon/icons": "^11.34.1",
+    "@carbon/styles": "^1.48.1",
+    "@carbon/web-components": "2.3.0-canary.7750761889.0"
   }
 }

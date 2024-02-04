@@ -1,0 +1,46 @@
+@forward '@carbon/styles/scss/config';
+@forward '@carbon/styles/scss/spacing';
+@forward '@carbon/styles/scss/colors' hide $white;
+@forward '@carbon/styles/scss/motion';
+@forward '@carbon/styles/scss/type';
+@forward '@carbon/styles/scss/themes';
+@forward '@carbon/styles/scss/theme';
+
+@use '@carbon/styles/scss/reset';
+/*@forward '@carbon/styles/scss/fonts';*/
+/*@forward '@carbon/styles/scss/grid';*/
+@forward '@carbon/styles/scss/layer';
+@forward '@carbon/styles/scss/layout';
+@forward '@carbon/styles/scss/zone';
+@use '@carbon/styles/scss/components';
+
+$feature-flags: ( enable-css-custom-properties: true, grid-columns-16: true, );
+
+@use '@carbon/grid';
+
+// Emit the flex-grid styles
+@include grid.flex-grid();
+
+#cds-preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cds-background, #f8f9fa);
+    transition: opacity .5s linear;
+    z-index: 9999;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cds-preload-indicator {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--cds-text-primary,#000);
+    border-top-color: transparent;
+    border-radius: 100%;
+    animation: cds-preload-animation infinite 0.75s linear;
+}

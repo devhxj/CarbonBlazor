@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsMultiSelectItem : BaseComponent
+public class CdsMultiSelectItem : CdsComponentBase
 {
     /// <summary>
     /// The property to hide when item is filtered from input
@@ -46,19 +46,20 @@ public class CdsMultiSelectItem : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-multi-select-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "filtered", Filtered)
-            .SetAttributeNotNull(7, "selection-name", SelectionName)
-            .SetAttributeNotNull(8, "disabled", Disabled)
-            .SetAttribute(9, "size", Size)
-            .SetAttributeNotNull(10, "value", Value)
-            .SetAttributeNotNull(11, "styles", Styles)
-            .SetAttributes(12, AdditionalAttributes)
-            .SetContent(13, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "filtered", Filtered)
+            .SetAttributeNotNull(8, "selection-name", SelectionName)
+            .SetAttributeNotNull(9, "disabled", Disabled)
+            .SetAttribute(10, "size", Size)
+            .SetAttributeNotNull(11, "value", Value)
+            .SetAttributeNotNull(12, "styles", Styles)
+            .SetReferenceCapture(13, CaptureReference)
+            .SetContent(14, ChildContent)
             .CloseElement();
     }
 }

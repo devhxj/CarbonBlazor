@@ -21,7 +21,7 @@ public class ToggleContext
     public string UncheckedTextSlot = "unchecked-text";
 }
 
-public class CdsToggle : BaseComponent<ToggleContext>
+public class CdsToggle : CdsComponentBase<ToggleContext>
 {
     /// <summary>
     /// The text for the checked state.
@@ -166,34 +166,35 @@ public class CdsToggle : BaseComponent<ToggleContext>
     {
         builder
             .OpenElementAnd(0, "cds-toggle")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "label-a", LabelA)
-            .SetAttributeNotNull(7, "read-only", ReadOnly)
-            .SetAttributeNotNull(8, "size", Size)
-            .SetAttributeNotNull(9, "label-b", LabelB)
-            .SetAttributeNotNull(10, "checked", Checked)
-            .SetAttributeNotNull(11, "data-table", DataTable)
-            .SetAttributeNotNull(12, "disabled", Disabled)
-            .SetAttributeNotNull(13, "helper-text", HelperText)
-            .SetAttributeNotNull(14, "hide-checkbox", HideCheckbox)
-            .SetAttributeNotNull(15, "hideLabel", HideLabel)
-            .SetAttributeNotNull(16, "indeterminate", Indeterminate)
-            .SetAttributeNotNull(17, "label-text", LabelText)
-            .SetAttributeNotNull(18, "name", Name)
-            .SetAttributeNotNull(19, "readonly", Readonly)
-            .SetAttributeNotNull(20, "invalid", Invalid)
-            .SetAttributeNotNull(21, "invalid-text", InvalidText)
-            .SetAttributeNotNull(22, "value", Value)
-            .SetAttributeNotNull(23, "warn", Warn)
-            .SetAttributeNotNull(24, "warn-text", WarnText)
-            .SetAttributeNotNull(25, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(26, "styles", Styles)
-            .SetAttributes(27, AdditionalAttributes)
-            .SetContent(28, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "label-a", LabelA)
+            .SetAttributeNotNull(8, "read-only", ReadOnly)
+            .SetAttributeNotNull(9, "size", Size)
+            .SetAttributeNotNull(10, "label-b", LabelB)
+            .SetAttributeNotNull(11, "checked", Checked)
+            .SetAttributeNotNull(12, "data-table", DataTable)
+            .SetAttributeNotNull(13, "disabled", Disabled)
+            .SetAttributeNotNull(14, "helper-text", HelperText)
+            .SetAttributeNotNull(15, "hide-checkbox", HideCheckbox)
+            .SetAttributeNotNull(16, "hideLabel", HideLabel)
+            .SetAttributeNotNull(17, "indeterminate", Indeterminate)
+            .SetAttributeNotNull(18, "label-text", LabelText)
+            .SetAttributeNotNull(19, "name", Name)
+            .SetAttributeNotNull(20, "readonly", Readonly)
+            .SetAttributeNotNull(21, "invalid", Invalid)
+            .SetAttributeNotNull(22, "invalid-text", InvalidText)
+            .SetAttributeNotNull(23, "value", Value)
+            .SetAttributeNotNull(24, "warn", Warn)
+            .SetAttributeNotNull(25, "warn-text", WarnText)
+            .SetAttributeNotNull(26, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(27, "styles", Styles)
+            .SetReferenceCapture(28, CaptureReference)
+            .SetContent(29, ChildContent, new())
             .CloseElement();
     }
 }

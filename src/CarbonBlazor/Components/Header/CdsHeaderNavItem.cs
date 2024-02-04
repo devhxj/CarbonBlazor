@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsHeaderNavItem : BaseComponent
+public class CdsHeaderNavItem : CdsComponentBase
 {
     /// <summary>
     /// Link `href`.
@@ -51,20 +51,21 @@ public class CdsHeaderNavItem : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-header-nav-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "href", Href)
-            .SetAttributeNotNull(7, "rel", Rel)
-            .SetAttributeNotNull(8, "target", Target)
-            .SetAttributeNotNull(9, "is-active", IsActive)
-            .SetAttributeNotNull(10, "aria-current", AriaCurrent)
-            .SetAttributeNotNull(11, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(12, "styles", Styles)
-            .SetAttributes(13, AdditionalAttributes)
-            .SetContent(14, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "href", Href)
+            .SetAttributeNotNull(8, "rel", Rel)
+            .SetAttributeNotNull(9, "target", Target)
+            .SetAttributeNotNull(10, "is-active", IsActive)
+            .SetAttributeNotNull(11, "aria-current", AriaCurrent)
+            .SetAttributeNotNull(12, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(13, "styles", Styles)
+            .SetReferenceCapture(14, CaptureReference)
+            .SetContent(15, ChildContent)
             .CloseElement();
     }
 }

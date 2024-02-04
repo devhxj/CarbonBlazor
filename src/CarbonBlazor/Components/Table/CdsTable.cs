@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTable : BaseComponent
+public class CdsTable : CdsComponentBase
 {
     /// <summary>
     /// `true` if this table should support batch expansion
@@ -118,29 +118,30 @@ public class CdsTable : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "batch-expansion", BatchExpansion)
-            .SetAttributeNotNull(7, "collator", Collator)
-            .SetAttributeNotNull(8, "expandable", Expandable)
-            .SetAttributeNotNull(9, "filterRows", FilterRows)
-            .SetAttributeNotNull(10, "headerCount", HeaderCount)
-            .SetAttributeNotNull(11, "is-selectable", IsSelectable)
-            .SetAttributeNotNull(12, "is-sortable", IsSortable)
-            .SetAttributeNotNull(13, "locale", Locale)
-            .SetAttributeNotNull(14, "overflow-menu-on-hover", OverflowMenuOnHover)
-            .SetAttributeNotNull(15, "radio", Radio)
-            .SetAttribute(16, "size", Size)
-            .SetAttributeNotNull(17, "use-static-width", UseStaticWidth)
-            .SetAttributeNotNull(18, "use-zebra-styles", UseZebraStyles)
-            .SetAttributeNotNull(19, "with-header", WithHeader)
-            .SetAttributeNotNull(20, "with-row-slugs", WithRowSlugs)
-            .SetAttributeNotNull(21, "styles", Styles)
-            .SetAttributes(22, AdditionalAttributes)
-            .SetContent(23, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "batch-expansion", BatchExpansion)
+            .SetAttributeNotNull(8, "collator", Collator)
+            .SetAttributeNotNull(9, "expandable", Expandable)
+            .SetAttributeNotNull(10, "filterRows", FilterRows)
+            .SetAttributeNotNull(11, "headerCount", HeaderCount)
+            .SetAttributeNotNull(12, "is-selectable", IsSelectable)
+            .SetAttributeNotNull(13, "is-sortable", IsSortable)
+            .SetAttributeNotNull(14, "locale", Locale)
+            .SetAttributeNotNull(15, "overflow-menu-on-hover", OverflowMenuOnHover)
+            .SetAttributeNotNull(16, "radio", Radio)
+            .SetAttribute(17, "size", Size)
+            .SetAttributeNotNull(18, "use-static-width", UseStaticWidth)
+            .SetAttributeNotNull(19, "use-zebra-styles", UseZebraStyles)
+            .SetAttributeNotNull(20, "with-header", WithHeader)
+            .SetAttributeNotNull(21, "with-row-slugs", WithRowSlugs)
+            .SetAttributeNotNull(22, "styles", Styles)
+            .SetReferenceCapture(23, CaptureReference)
+            .SetContent(24, ChildContent)
             .CloseElement();
     }
 }

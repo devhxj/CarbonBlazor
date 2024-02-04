@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTableToolbarSearch : BaseComponent
+public class CdsTableToolbarSearch : CdsComponentBase
 {
     /// <summary>
     /// `true` if the search box should be always be open.
@@ -106,28 +106,29 @@ public class CdsTableToolbarSearch : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table-toolbar-search")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "persistent", Persistent)
-            .SetAttributeNotNull(7, "autocomplete", AutoComplete)
-            .SetAttributeNotNull(8, "close-button-label-text", CloseButtonLabelText)
-            .SetAttributeNotNull(9, "disabled", Disabled)
-            .SetAttributeNotNull(10, "expandable", Expandable)
-            .SetAttributeNotNull(11, "expanded", Expanded)
-            .SetAttributeNotNull(12, "hasCustomIcon", HasCustomIcon)
-            .SetAttributeNotNull(13, "label-text", LabelText)
-            .SetAttributeNotNull(14, "name", Name)
-            .SetAttributeNotNull(15, "placeholder", Placeholder)
-            .SetAttribute(16, "size", Size)
-            .SetAttributeNotNull(17, "type", Type)
-            .SetAttributeNotNull(18, "value", Value)
-            .SetAttributeNotNull(19, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(20, "styles", Styles)
-            .SetAttributes(21, AdditionalAttributes)
-            .SetContent(22, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "persistent", Persistent)
+            .SetAttributeNotNull(8, "autocomplete", AutoComplete)
+            .SetAttributeNotNull(9, "close-button-label-text", CloseButtonLabelText)
+            .SetAttributeNotNull(10, "disabled", Disabled)
+            .SetAttributeNotNull(11, "expandable", Expandable)
+            .SetAttributeNotNull(12, "expanded", Expanded)
+            .SetAttributeNotNull(13, "hasCustomIcon", HasCustomIcon)
+            .SetAttributeNotNull(14, "label-text", LabelText)
+            .SetAttributeNotNull(15, "name", Name)
+            .SetAttributeNotNull(16, "placeholder", Placeholder)
+            .SetAttribute(17, "size", Size)
+            .SetAttributeNotNull(18, "type", Type)
+            .SetAttributeNotNull(19, "value", Value)
+            .SetAttributeNotNull(20, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(21, "styles", Styles)
+            .SetReferenceCapture(22, CaptureReference)
+            .SetContent(23, ChildContent)
             .CloseElement();
     }
 }

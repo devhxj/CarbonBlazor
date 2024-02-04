@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsHeaderMenu : BaseComponent
+public class CdsHeaderMenu : CdsComponentBase
 {
     /// <summary>
     /// `true` if the menu should be expanded.
@@ -46,19 +46,20 @@ public class CdsHeaderMenu : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-header-menu")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "expanded", Expanded)
-            .SetAttributeNotNull(7, "is-active", IsActive)
-            .SetAttributeNotNull(8, "trigger-content", TriggerContent)
-            .SetAttributeNotNull(9, "menu-label", MenuLabel)
-            .SetAttributeNotNull(10, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(11, "styles", Styles)
-            .SetAttributes(12, AdditionalAttributes)
-            .SetContent(13, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "expanded", Expanded)
+            .SetAttributeNotNull(8, "is-active", IsActive)
+            .SetAttributeNotNull(9, "trigger-content", TriggerContent)
+            .SetAttributeNotNull(10, "menu-label", MenuLabel)
+            .SetAttributeNotNull(11, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(12, "styles", Styles)
+            .SetReferenceCapture(13, CaptureReference)
+            .SetContent(14, ChildContent)
             .CloseElement();
     }
 }

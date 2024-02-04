@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSwitcherItem : BaseComponent
+public class CdsSwitcherItem : CdsComponentBase
 {
     /// <summary>
     /// Props for accessibility labelled by
@@ -39,18 +39,19 @@ public class CdsSwitcherItem : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-switcher-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "aria-labelledby", AriaLabelledBy)
-            .SetAttributeNotNull(7, "href", Href)
-            .SetAttributeNotNull(8, "selected", Selected)
-            .SetAttributeNotNull(9, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(10, "styles", Styles)
-            .SetAttributes(11, AdditionalAttributes)
-            .SetContent(12, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "aria-labelledby", AriaLabelledBy)
+            .SetAttributeNotNull(8, "href", Href)
+            .SetAttributeNotNull(9, "selected", Selected)
+            .SetAttributeNotNull(10, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(11, "styles", Styles)
+            .SetReferenceCapture(12, CaptureReference)
+            .SetContent(13, ChildContent)
             .CloseElement();
     }
 }

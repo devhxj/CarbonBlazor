@@ -19,68 +19,44 @@
         <section>
             <StatusMessage Message="@errorMessage" />
             <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
-                <DataAnnotationsValidator />
                 <h2>Use a local account to log in.</h2>
                 <hr />
-                <ValidationSummary class="text-danger" role="alert" />
+                <ValidationSummary role="alert" />
 
                 <CdsFormGroup LegendText="FormGroup Legend" Context="formGroup">
-                    <CdsStack Gap="7">
-                        <CdsFormItem>
-                            <CdsTextInput InvalidText="@Input.Email" 
-                                          Label="Email" 
-                                          Value="@Input.Email" 
-                                          Required="true" 
-                                          Placeholder="name@example.com" 
-                                          Autocomplete="username" />
-                        </CdsFormItem>
-                        <CdsFormItem>
-                            <CdsTextInput InvalidText="@Input.Password" 
-                                          Label="Password" 
-                                          Value="@Input.Password" 
-                                          Autocomplete="current-password" 
-                                          Required="true" 
-                                          aria-required="true" 
-                                          Placeholder="password" />
-                        </CdsFormItem>
-                        <CdsFormItem>
-                            <CdsCheckbox LabelText="Remember me" Value="@Input.RememberMe.ToString()" />
-                        </CdsFormItem>
-
+                    <CdsStack Gap="10" Orientation="STACK_ORIENTATION.VERTICAL">
+                        <CdsTextInput Label="Email" 
+                                      @bind-Value="@Input.Email"
+                                      Required="true"
+                                      Type="INPUT_TYPE.EMAIL"
+                                      Placeholder="name@example.com" 
+                                      Autocomplete="username" />
+                        <CdsTextInput Label="Password" 
+                                      @bind-Value="@Input.Password"
+                                      Autocomplete="current-password" 
+                                      Required="true"
+                                      Type="INPUT_TYPE.PASSWORD"
+                                      Pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                      Placeholder="password" />
+                        <CdsCheckbox LabelText="Remember me" @bind-Value="@Input.RememberMe" />
                         <CdsButton Type="BUTTON_TYPE.SUBMIT">Log in</CdsButton>
                     </CdsStack>
                 </CdsFormGroup>
 
-                <div class="form-floating mb-3">
-                    <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label for="email" class="form-label">Email</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText type="password" @bind-Value="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label for="password" class="form-label">Password</label>
-                    <ValidationMessage For="() => Input.Password" class="text-danger" />
-                </div>
-                <div class="checkbox mb-3">
-                    <label class="form-label">
-                        <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
-                        Remember me
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a href="Account/ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
             </EditForm>
+
+            <div>
+                <p>
+                    <a href="Account/ForgotPassword">Forgot your password?</a>
+                </p>
+                <p>
+                    <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
+                </p>
+                <p>
+                    <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
+                </p>
+            </div>
         </section>
     </div>
     <div class="col-md-6 col-md-offset-2">

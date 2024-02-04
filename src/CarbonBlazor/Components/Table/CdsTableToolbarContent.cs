@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTableToolbarContent : BaseComponent
+public class CdsTableToolbarContent : CdsComponentBase
 {
     /// <summary>
     /// `true` if this batch actions bar is active.
@@ -27,16 +27,17 @@ public class CdsTableToolbarContent : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table-toolbar-content")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "has-batch-actions", HasBatchActions)
-            .SetAttributeNotNull(7, "size", Size)
-            .SetAttributeNotNull(8, "styles", Styles)
-            .SetAttributes(9, AdditionalAttributes)
-            .SetContent(10, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "has-batch-actions", HasBatchActions)
+            .SetAttributeNotNull(8, "size", Size)
+            .SetAttributeNotNull(9, "styles", Styles)
+            .SetReferenceCapture(10, CaptureReference)
+            .SetContent(11, ChildContent)
             .CloseElement();
     }
 }

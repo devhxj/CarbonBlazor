@@ -16,7 +16,7 @@ public class FileUploaderItemContext
     public string ValidityMessageSlot = "validity-message";
 }
 
-public class CdsFileUploaderItem : BaseComponent<FileUploaderItemContext>
+public class CdsFileUploaderItem : CdsComponentBase<FileUploaderItemContext>
 {
     /// <summary>
     /// The `aria-label` attribute for the icon to delete this file uploader item.
@@ -68,20 +68,21 @@ public class CdsFileUploaderItem : BaseComponent<FileUploaderItemContext>
     {
         builder
             .OpenElementAnd(0, "cds-file-uploader-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "icon-description", IconDescription)
-            .SetAttributeNotNull(7, "invalid", Invalid)
-            .SetAttribute(8, "size", Size)
-            .SetAttribute(9, "state", State)
-            .SetAttributeNotNull(10, "error-subject", ErrorSubject)
-            .SetAttributeNotNull(11, "error-body", ErrorBody)
-            .SetAttributeNotNull(12, "styles", Styles)
-            .SetAttributes(13, AdditionalAttributes)
-            .SetContent(14, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "icon-description", IconDescription)
+            .SetAttributeNotNull(8, "invalid", Invalid)
+            .SetAttribute(9, "size", Size)
+            .SetAttribute(10, "state", State)
+            .SetAttributeNotNull(11, "error-subject", ErrorSubject)
+            .SetAttributeNotNull(12, "error-body", ErrorBody)
+            .SetAttributeNotNull(13, "styles", Styles)
+            .SetReferenceCapture(14, CaptureReference)
+            .SetContent(15, ChildContent, new())
             .CloseElement();
     }
 }

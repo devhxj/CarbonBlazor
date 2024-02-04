@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTileGroup : BaseComponent
+public class CdsTileGroup : CdsComponentBase
 {
     /// <summary>
     /// Provide an optional className to be applied to the component
@@ -41,20 +41,21 @@ public class CdsTileGroup : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-tile-group")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "fieldset-class-name", FieldsetClassName)
-            .SetAttributeNotNull(7, "disabled", Disabled)
-            .SetAttributeNotNull(8, "currentRadioSelection", CurrentRadioSelection)
-            .SetAttributeNotNull(9, "currentSelections", CurrentSelections)
-            .SetAttributeNotNull(10, "radioTiles", RadioTiles)
-            .SetAttributeNotNull(11, "selectableTiles", SelectableTiles)
-            .SetAttributeNotNull(12, "styles", Styles)
-            .SetAttributes(13, AdditionalAttributes)
-            .SetContent(14, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "fieldset-class-name", FieldsetClassName)
+            .SetAttributeNotNull(8, "disabled", Disabled)
+            .SetAttributeNotNull(9, "currentRadioSelection", CurrentRadioSelection)
+            .SetAttributeNotNull(10, "currentSelections", CurrentSelections)
+            .SetAttributeNotNull(11, "radioTiles", RadioTiles)
+            .SetAttributeNotNull(12, "selectableTiles", SelectableTiles)
+            .SetAttributeNotNull(13, "styles", Styles)
+            .SetReferenceCapture(14, CaptureReference)
+            .SetContent(15, ChildContent)
             .CloseElement();
     }
 }

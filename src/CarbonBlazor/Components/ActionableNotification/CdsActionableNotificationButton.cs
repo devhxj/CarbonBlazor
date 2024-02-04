@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsActionableNotificationButton : BaseComponent
+public class CdsActionableNotificationButton : CdsComponentBase
 {
     /// <summary>
     /// `true` if the button should have input focus when the page loads.
@@ -168,37 +168,38 @@ public class CdsActionableNotificationButton : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-actionable-notification-button")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "autofocus", Autofocus)
-            .SetAttributeNotNull(7, "batch-action", BatchAction)
-            .SetAttributeNotNull(8, "button-class-name", ButtonClassName)
-            .SetAttributeNotNull(9, "danger-descriptor", DangerDescriptor)
-            .SetAttributeNotNull(10, "disabled", Disabled)
-            .SetAttributeNotNull(11, "download", Download)
-            .SetAttributeNotNull(12, "has-main-content", HasMainContent)
-            .SetAttributeNotNull(13, "href", Href)
-            .SetAttributeNotNull(14, "hreflang", Hreflang)
-            .SetAttributeNotNull(15, "isExpressive", IsExpressive)
-            .SetAttributeNotNull(16, "isSelected", IsSelected)
-            .SetAttribute(17, "kind", Kind)
-            .SetAttributeNotNull(18, "link-role", LinkRole)
-            .SetAttributeNotNull(19, "openTooltip", OpenTooltip)
-            .SetAttributeNotNull(20, "ping", Ping)
-            .SetAttributeNotNull(21, "rel", Rel)
-            .SetAttributeNotNull(22, "size", Size)
-            .SetAttributeNotNull(23, "target", Target)
-            .SetAttributeNotNull(24, "tooltip-alignment", TooltipAlignment)
-            .SetAttribute(25, "tooltip-position", TooltipPosition)
-            .SetAttributeNotNull(26, "tooltip-text", TooltipText)
-            .SetAttribute(27, "type", Type)
-            .SetAttributeNotNull(28, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(29, "styles", Styles)
-            .SetAttributes(30, AdditionalAttributes)
-            .SetContent(31, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "autofocus", Autofocus)
+            .SetAttributeNotNull(8, "batch-action", BatchAction)
+            .SetAttributeNotNull(9, "button-class-name", ButtonClassName)
+            .SetAttributeNotNull(10, "danger-descriptor", DangerDescriptor)
+            .SetAttributeNotNull(11, "disabled", Disabled)
+            .SetAttributeNotNull(12, "download", Download)
+            .SetAttributeNotNull(13, "has-main-content", HasMainContent)
+            .SetAttributeNotNull(14, "href", Href)
+            .SetAttributeNotNull(15, "hreflang", Hreflang)
+            .SetAttributeNotNull(16, "isExpressive", IsExpressive)
+            .SetAttributeNotNull(17, "isSelected", IsSelected)
+            .SetAttribute(18, "kind", Kind)
+            .SetAttributeNotNull(19, "link-role", LinkRole)
+            .SetAttributeNotNull(20, "openTooltip", OpenTooltip)
+            .SetAttributeNotNull(21, "ping", Ping)
+            .SetAttributeNotNull(22, "rel", Rel)
+            .SetAttributeNotNull(23, "size", Size)
+            .SetAttributeNotNull(24, "target", Target)
+            .SetAttributeNotNull(25, "tooltip-alignment", TooltipAlignment)
+            .SetAttribute(26, "tooltip-position", TooltipPosition)
+            .SetAttributeNotNull(27, "tooltip-text", TooltipText)
+            .SetAttribute(28, "type", Type)
+            .SetAttributeNotNull(29, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(30, "styles", Styles)
+            .SetReferenceCapture(31, CaptureReference)
+            .SetContent(32, ChildContent)
             .CloseElement();
     }
 }

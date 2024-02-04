@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsComboBoxItem : BaseComponent
+public class CdsComboBoxItem : CdsComponentBase
 {
     /// <summary>
     /// `true` if this dropdown item should be disabled.
@@ -34,17 +34,18 @@ public class CdsComboBoxItem : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-combo-box-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttribute(7, "size", Size)
-            .SetAttributeNotNull(8, "value", Value)
-            .SetAttributeNotNull(9, "styles", Styles)
-            .SetAttributes(10, AdditionalAttributes)
-            .SetContent(11, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttribute(8, "size", Size)
+            .SetAttributeNotNull(9, "value", Value)
+            .SetAttributeNotNull(10, "styles", Styles)
+            .SetReferenceCapture(11, CaptureReference)
+            .SetContent(12, ChildContent)
             .CloseElement();
     }
 }

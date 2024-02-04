@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSideNav : BaseComponent
+public class CdsSideNav : CdsComponentBase
 {
     /// <summary>
     /// Collapse mode of the side nav.
@@ -42,18 +42,19 @@ public class CdsSideNav : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-side-nav")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttribute(6, "collapse-mode", CollapseMode)
-            .SetAttributeNotNull(7, "expanded", Expanded)
-            .SetAttributeNotNull(8, "is-not-child-of-header", IsNotChildOfHeader)
-            .SetAttributeNotNull(9, "is-not-persistent", IsNotPersistent)
-            .SetAttributeNotNull(10, "styles", Styles)
-            .SetAttributes(11, AdditionalAttributes)
-            .SetContent(12, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttribute(7, "collapse-mode", CollapseMode)
+            .SetAttributeNotNull(8, "expanded", Expanded)
+            .SetAttributeNotNull(9, "is-not-child-of-header", IsNotChildOfHeader)
+            .SetAttributeNotNull(10, "is-not-persistent", IsNotPersistent)
+            .SetAttributeNotNull(11, "styles", Styles)
+            .SetReferenceCapture(12, CaptureReference)
+            .SetContent(13, ChildContent)
             .CloseElement();
     }
 }

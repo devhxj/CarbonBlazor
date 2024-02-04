@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsProgressIndicator : BaseComponent
+public class CdsProgressIndicator : CdsComponentBase
 {
     /// <summary>
     /// Determines whether or not the progress indicator should be rendered
@@ -30,16 +30,17 @@ public class CdsProgressIndicator : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-progress-indicator")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "vertical", Vertical)
-            .SetAttributeNotNull(7, "space-equally", SpaceEqually)
-            .SetAttributeNotNull(8, "styles", Styles)
-            .SetAttributes(9, AdditionalAttributes)
-            .SetContent(10, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "vertical", Vertical)
+            .SetAttributeNotNull(8, "space-equally", SpaceEqually)
+            .SetAttributeNotNull(9, "styles", Styles)
+            .SetReferenceCapture(10, CaptureReference)
+            .SetContent(11, ChildContent)
             .CloseElement();
     }
 }

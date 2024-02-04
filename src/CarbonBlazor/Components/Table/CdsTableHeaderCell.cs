@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTableHeaderCell : BaseComponent
+public class CdsTableHeaderCell : CdsComponentBase
 {
     /// <summary>
     /// `true` if this table has selectable rows
@@ -68,22 +68,23 @@ public class CdsTableHeaderCell : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table-header-cell")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "isselectable", IsSelectable)
-            .SetAttributeNotNull(7, "is-sortable", IsExpandable)
-            .SetAttributeNotNull(8, "issortable", IsSortable)
-            .SetAttributeNotNull(9, "sort-active", SortActive)
-            .SetAttributeNotNull(10, "sort-cycle", SortCycle)
-            .SetAttributeNotNull(11, "sort-direction", SortDirection)
-            .SetAttributeNotNull(12, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(13, "styles", Styles)
-            .SetAttributeNotNull(14, "TABLE_SORT_CYCLES", TABLE_SORT_CYCLES)
-            .SetAttributes(15, AdditionalAttributes)
-            .SetContent(16, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "isselectable", IsSelectable)
+            .SetAttributeNotNull(8, "is-sortable", IsExpandable)
+            .SetAttributeNotNull(9, "issortable", IsSortable)
+            .SetAttributeNotNull(10, "sort-active", SortActive)
+            .SetAttributeNotNull(11, "sort-cycle", SortCycle)
+            .SetAttributeNotNull(12, "sort-direction", SortDirection)
+            .SetAttributeNotNull(13, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(14, "styles", Styles)
+            .SetAttributeNotNull(15, "TABLE_SORT_CYCLES", TABLE_SORT_CYCLES)
+            .SetReferenceCapture(16, CaptureReference)
+            .SetContent(17, ChildContent)
             .CloseElement();
     }
 }

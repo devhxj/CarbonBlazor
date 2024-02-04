@@ -37,7 +37,7 @@ const onEnhancedLoad = () => {
 }
 
 export function afterWebStarted(blazor) {
-    customElements.define('cds-script', class extends HTMLElement {
+    customElements.define('cds-script', class extends HTMLTemplateElement {
         static observedAttributes = ['src'];
 
         constructor() {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsDatePicker : BaseComponent
+public class CdsDatePicker : CdsComponentBase
 {
     /// <summary>
     /// The Flatpickr instance.
@@ -120,30 +120,31 @@ public class CdsDatePicker : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-date-picker")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "calendar", Calendar)
-            .SetAttributeNotNull(7, "allow-input", AllowInput)
-            .SetAttributeNotNull(8, "close-on-select", CloseOnSelect)
-            .SetAttributeNotNull(9, "date-format", DateFormat)
-            .SetAttributeNotNull(10, "disabled", Disabled)
-            .SetAttributeNotNull(11, "locale", Locale)
-            .SetAttributeNotNull(12, "enabled-range", EnabledRange)
-            .SetAttributeNotNull(13, "min-date", MinDate)
-            .SetAttributeNotNull(14, "max-date", MaxDate)
-            .SetAttributeNotNull(15, "name", Name)
-            .SetAttributeNotNull(16, "open", Open)
-            .SetAttributeNotNull(17, "readonly", Readonly)
-            .SetAttributeNotNull(18, "value", Value)
-            .SetAttributeNotNull(19, "classnoborder", ClassNoBorder)
-            .SetAttributeNotNull(20, "defaultdateformat", DefaultDateFormat)
-            .SetAttribute(21, "", DefaultLocale)
-            .SetAttributeNotNull(22, "styles", Styles)
-            .SetAttributes(23, AdditionalAttributes)
-            .SetContent(24, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "calendar", Calendar)
+            .SetAttributeNotNull(8, "allow-input", AllowInput)
+            .SetAttributeNotNull(9, "close-on-select", CloseOnSelect)
+            .SetAttributeNotNull(10, "date-format", DateFormat)
+            .SetAttributeNotNull(11, "disabled", Disabled)
+            .SetAttributeNotNull(12, "locale", Locale)
+            .SetAttributeNotNull(13, "enabled-range", EnabledRange)
+            .SetAttributeNotNull(14, "min-date", MinDate)
+            .SetAttributeNotNull(15, "max-date", MaxDate)
+            .SetAttributeNotNull(16, "name", Name)
+            .SetAttributeNotNull(17, "open", Open)
+            .SetAttributeNotNull(18, "readonly", Readonly)
+            .SetAttributeNotNull(19, "value", Value)
+            .SetAttributeNotNull(20, "classnoborder", ClassNoBorder)
+            .SetAttributeNotNull(21, "defaultdateformat", DefaultDateFormat)
+            .SetAttribute(22, "", DefaultLocale)
+            .SetAttributeNotNull(23, "styles", Styles)
+            .SetReferenceCapture(24, CaptureReference)
+            .SetContent(25, ChildContent)
             .CloseElement();
     }
 }

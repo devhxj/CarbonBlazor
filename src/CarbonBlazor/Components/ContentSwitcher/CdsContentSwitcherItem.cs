@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsContentSwitcherItem : BaseComponent
+public class CdsContentSwitcherItem : CdsComponentBase
 {
     /// <summary>
     /// `true` if this content switcher item should be disabled.
@@ -81,23 +81,24 @@ public class CdsContentSwitcherItem : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-content-switcher-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "target", Target)
-            .SetAttributeNotNull(8, "value", Value)
-            .SetAttributeNotNull(9, "icon", Icon)
-            .SetAttributeNotNull(10, "align", Align)
-            .SetAttributeNotNull(11, "close-on-activation", CloseOnActivation)
-            .SetAttributeNotNull(12, "enterdelayms", EnterDelayMs)
-            .SetAttributeNotNull(13, "leavedelayms", LeaveDelayMs)
-            .SetAttributeNotNull(14, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(15, "styles", Styles)
-            .SetAttributes(16, AdditionalAttributes)
-            .SetContent(17, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "target", Target)
+            .SetAttributeNotNull(9, "value", Value)
+            .SetAttributeNotNull(10, "icon", Icon)
+            .SetAttributeNotNull(11, "align", Align)
+            .SetAttributeNotNull(12, "close-on-activation", CloseOnActivation)
+            .SetAttributeNotNull(13, "enterdelayms", EnterDelayMs)
+            .SetAttributeNotNull(14, "leavedelayms", LeaveDelayMs)
+            .SetAttributeNotNull(15, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(16, "styles", Styles)
+            .SetReferenceCapture(17, CaptureReference)
+            .SetContent(18, ChildContent)
             .CloseElement();
     }
 }

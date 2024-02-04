@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsClickableTile : BaseComponent
+public class CdsClickableTile : CdsComponentBase
 {
     /// <summary>
     /// The color scheme.
@@ -117,30 +117,31 @@ public class CdsClickableTile : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-clickable-tile")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "color-scheme", ColorScheme)
-            .SetAttributeNotNull(7, "has-rounded-corners", HasRoundedCorners)
-            .SetAttributeNotNull(8, "slug", Slug)
-            .SetAttributeNotNull(9, "disabled", Disabled)
-            .SetAttributeNotNull(10, "download", Download)
-            .SetAttributeNotNull(11, "href", Href)
-            .SetAttributeNotNull(12, "hreflang", Hreflang)
-            .SetAttributeNotNull(13, "inline", Inline)
-            .SetAttributeNotNull(14, "link-role", LinkRole)
-            .SetAttributeNotNull(15, "ping", Ping)
-            .SetAttributeNotNull(16, "rel", Rel)
-            .SetAttributeNotNull(17, "size", Size)
-            .SetAttributeNotNull(18, "target", Target)
-            .SetAttributeNotNull(19, "type", Type)
-            .SetAttributeNotNull(20, "visited", Visited)
-            .SetAttributeNotNull(21, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(22, "styles", Styles)
-            .SetAttributes(23, AdditionalAttributes)
-            .SetContent(24, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "color-scheme", ColorScheme)
+            .SetAttributeNotNull(8, "has-rounded-corners", HasRoundedCorners)
+            .SetAttributeNotNull(9, "slug", Slug)
+            .SetAttributeNotNull(10, "disabled", Disabled)
+            .SetAttributeNotNull(11, "download", Download)
+            .SetAttributeNotNull(12, "href", Href)
+            .SetAttributeNotNull(13, "hreflang", Hreflang)
+            .SetAttributeNotNull(14, "inline", Inline)
+            .SetAttributeNotNull(15, "link-role", LinkRole)
+            .SetAttributeNotNull(16, "ping", Ping)
+            .SetAttributeNotNull(17, "rel", Rel)
+            .SetAttributeNotNull(18, "size", Size)
+            .SetAttributeNotNull(19, "target", Target)
+            .SetAttributeNotNull(20, "type", Type)
+            .SetAttributeNotNull(21, "visited", Visited)
+            .SetAttributeNotNull(22, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(23, "styles", Styles)
+            .SetReferenceCapture(24, CaptureReference)
+            .SetContent(25, ChildContent)
             .CloseElement();
     }
 }

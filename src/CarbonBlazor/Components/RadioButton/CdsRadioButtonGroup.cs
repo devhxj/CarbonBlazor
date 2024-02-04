@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsRadioButtonGroup : BaseComponent
+public class CdsRadioButtonGroup : CdsComponentBase
 {
     /// <summary>
     /// The `value` attribute for the `&lt;input&gt;` for selection.
@@ -98,27 +98,28 @@ public class CdsRadioButtonGroup : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-radio-button-group")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "defaultSelected", DefaultSelected)
-            .SetAttributeNotNull(7, "disabled", Disabled)
-            .SetAttribute(8, "label-position", LabelPosition)
-            .SetAttributeNotNull(9, "legend-text", LegendText)
-            .SetAttributeNotNull(10, "helper-text", HelperText)
-            .SetAttributeNotNull(11, "warn", Warn)
-            .SetAttributeNotNull(12, "warn-text", WarnText)
-            .SetAttributeNotNull(13, "invalid", Invalid)
-            .SetAttributeNotNull(14, "invalid-text", InvalidText)
-            .SetAttributeNotNull(15, "name", Name)
-            .SetAttribute(16, "orientation", Orientation)
-            .SetAttributeNotNull(17, "readOnly", ReadOnly)
-            .SetAttributeNotNull(18, "value", Value)
-            .SetAttributeNotNull(19, "styles", Styles)
-            .SetAttributes(20, AdditionalAttributes)
-            .SetContent(21, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "defaultSelected", DefaultSelected)
+            .SetAttributeNotNull(8, "disabled", Disabled)
+            .SetAttribute(9, "label-position", LabelPosition)
+            .SetAttributeNotNull(10, "legend-text", LegendText)
+            .SetAttributeNotNull(11, "helper-text", HelperText)
+            .SetAttributeNotNull(12, "warn", Warn)
+            .SetAttributeNotNull(13, "warn-text", WarnText)
+            .SetAttributeNotNull(14, "invalid", Invalid)
+            .SetAttributeNotNull(15, "invalid-text", InvalidText)
+            .SetAttributeNotNull(16, "name", Name)
+            .SetAttribute(17, "orientation", Orientation)
+            .SetAttributeNotNull(18, "readOnly", ReadOnly)
+            .SetAttributeNotNull(19, "value", Value)
+            .SetAttributeNotNull(20, "styles", Styles)
+            .SetReferenceCapture(21, CaptureReference)
+            .SetContent(22, ChildContent)
             .CloseElement();
     }
 }

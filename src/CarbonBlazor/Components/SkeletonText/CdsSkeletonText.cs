@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSkeletonText : BaseComponent
+public class CdsSkeletonText : CdsComponentBase
 {
     /// <summary>
     /// The type of skeleton text.
@@ -41,18 +41,19 @@ public class CdsSkeletonText : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-skeleton-text")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "type", Type)
-            .SetAttributeNotNull(7, "width", Width)
-            .SetAttributeNotNull(8, "paragraph", Paragraph)
-            .SetAttributeNotNull(9, "lineCount", LineCount)
-            .SetAttributeNotNull(10, "styles", Styles)
-            .SetAttributes(11, AdditionalAttributes)
-            .SetContent(12, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "type", Type)
+            .SetAttributeNotNull(8, "width", Width)
+            .SetAttributeNotNull(9, "paragraph", Paragraph)
+            .SetAttributeNotNull(10, "lineCount", LineCount)
+            .SetAttributeNotNull(11, "styles", Styles)
+            .SetReferenceCapture(12, CaptureReference)
+            .SetContent(13, ChildContent)
             .CloseElement();
     }
 }

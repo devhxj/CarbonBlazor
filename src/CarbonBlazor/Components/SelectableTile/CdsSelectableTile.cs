@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSelectableTile : BaseComponent
+public class CdsSelectableTile : CdsComponentBase
 {
     /// <summary>
     /// The a11y text for the checkmark icon of the selected state.
@@ -59,21 +59,22 @@ public class CdsSelectableTile : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-selectable-tile")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "checkmark-label", CheckmarkLabel)
-            .SetAttributeNotNull(7, "color-scheme", ColorScheme)
-            .SetAttributeNotNull(8, "has-rounded-corners", HasRoundedCorners)
-            .SetAttributeNotNull(9, "name", Name)
-            .SetAttributeNotNull(10, "selected", Selected)
-            .SetAttributeNotNull(11, "value", Value)
-            .SetAttributeNotNull(12, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(13, "styles", Styles)
-            .SetAttributes(14, AdditionalAttributes)
-            .SetContent(15, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "checkmark-label", CheckmarkLabel)
+            .SetAttributeNotNull(8, "color-scheme", ColorScheme)
+            .SetAttributeNotNull(9, "has-rounded-corners", HasRoundedCorners)
+            .SetAttributeNotNull(10, "name", Name)
+            .SetAttributeNotNull(11, "selected", Selected)
+            .SetAttributeNotNull(12, "value", Value)
+            .SetAttributeNotNull(13, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(14, "styles", Styles)
+            .SetReferenceCapture(15, CaptureReference)
+            .SetContent(16, ChildContent)
             .CloseElement();
     }
 }

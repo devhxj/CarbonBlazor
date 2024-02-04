@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTableHeaderRow : BaseComponent
+public class CdsTableHeaderRow : CdsComponentBase
 {
     /// <summary>
     /// `true` if this table should support batch expansion
@@ -83,24 +83,25 @@ public class CdsTableHeaderRow : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table-header-row")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "batch-expansion", BatchExpansion)
-            .SetAttributeNotNull(7, "disabled", Disabled)
-            .SetAttributeNotNull(8, "filtered", Filtered)
-            .SetAttributeNotNull(9, "hide-checkbox", HideCheckbox)
-            .SetAttributeNotNull(10, "highlighted", Highlighted)
-            .SetAttributeNotNull(11, "overflow-menu-on-hover", OverflowMenuOnHover)
-            .SetAttributeNotNull(12, "selected", Selected)
-            .SetAttributeNotNull(13, "selection-label", SelectionLabel)
-            .SetAttributeNotNull(14, "selection-name", SelectionName)
-            .SetAttributeNotNull(15, "selection-value", SelectionValue)
-            .SetAttributeNotNull(16, "styles", Styles)
-            .SetAttributes(17, AdditionalAttributes)
-            .SetContent(18, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "batch-expansion", BatchExpansion)
+            .SetAttributeNotNull(8, "disabled", Disabled)
+            .SetAttributeNotNull(9, "filtered", Filtered)
+            .SetAttributeNotNull(10, "hide-checkbox", HideCheckbox)
+            .SetAttributeNotNull(11, "highlighted", Highlighted)
+            .SetAttributeNotNull(12, "overflow-menu-on-hover", OverflowMenuOnHover)
+            .SetAttributeNotNull(13, "selected", Selected)
+            .SetAttributeNotNull(14, "selection-label", SelectionLabel)
+            .SetAttributeNotNull(15, "selection-name", SelectionName)
+            .SetAttributeNotNull(16, "selection-value", SelectionValue)
+            .SetAttributeNotNull(17, "styles", Styles)
+            .SetReferenceCapture(18, CaptureReference)
+            .SetContent(19, ChildContent)
             .CloseElement();
     }
 }

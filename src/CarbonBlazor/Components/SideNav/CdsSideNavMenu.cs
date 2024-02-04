@@ -11,7 +11,7 @@ public class SideNavMenuContext
     public string TitleIconSlot = "title-icon";
 }
 
-public class CdsSideNavMenu : BaseComponent<SideNavMenuContext>
+public class CdsSideNavMenu : CdsComponentBase<SideNavMenuContext>
 {
     /// <summary>
     /// `true` if the menu has active menu item.
@@ -64,20 +64,21 @@ public class CdsSideNavMenu : BaseComponent<SideNavMenuContext>
     {
         builder
             .OpenElementAnd(0, "cds-side-nav-menu")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "active", Active)
-            .SetAttributeNotNull(7, "expanded", Expanded)
-            .SetAttributeNotNull(8, "large", Large)
-            .SetAttributeNotNull(9, "force-collapsed", ForceCollapsed)
-            .SetAttributeNotNull(10, "attribitemhasicon", AttribItemHasIcon)
-            .SetAttributeNotNull(11, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(12, "styles", Styles)
-            .SetAttributes(13, AdditionalAttributes)
-            .SetContent(14, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "active", Active)
+            .SetAttributeNotNull(8, "expanded", Expanded)
+            .SetAttributeNotNull(9, "large", Large)
+            .SetAttributeNotNull(10, "force-collapsed", ForceCollapsed)
+            .SetAttributeNotNull(11, "attribitemhasicon", AttribItemHasIcon)
+            .SetAttributeNotNull(12, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(13, "styles", Styles)
+            .SetReferenceCapture(14, CaptureReference)
+            .SetContent(15, ChildContent, new())
             .CloseElement();
     }
 }

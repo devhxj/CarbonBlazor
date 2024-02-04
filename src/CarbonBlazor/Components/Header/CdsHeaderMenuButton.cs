@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsHeaderMenuButton : BaseComponent
+public class CdsHeaderMenuButton : CdsComponentBase
 {
     /// <summary>
     /// `true` if the button should represent its active state.
@@ -62,21 +62,22 @@ public class CdsHeaderMenuButton : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-header-menu-button")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "active", Active)
-            .SetAttributeNotNull(7, "button-label-active", ButtonLabelActive)
-            .SetAttributeNotNull(8, "button-label-inactive", ButtonLabelInactive)
-            .SetAttribute(9, "collapse-mode", CollapseMode)
-            .SetAttributeNotNull(10, "disabled", Disabled)
-            .SetAttributeNotNull(11, "is-not-child-of-header", IsNotChildOfHeader)
-            .SetAttributeNotNull(12, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(13, "styles", Styles)
-            .SetAttributes(14, AdditionalAttributes)
-            .SetContent(15, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "active", Active)
+            .SetAttributeNotNull(8, "button-label-active", ButtonLabelActive)
+            .SetAttributeNotNull(9, "button-label-inactive", ButtonLabelInactive)
+            .SetAttribute(10, "collapse-mode", CollapseMode)
+            .SetAttributeNotNull(11, "disabled", Disabled)
+            .SetAttributeNotNull(12, "is-not-child-of-header", IsNotChildOfHeader)
+            .SetAttributeNotNull(13, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(14, "styles", Styles)
+            .SetReferenceCapture(15, CaptureReference)
+            .SetContent(16, ChildContent)
             .CloseElement();
     }
 }

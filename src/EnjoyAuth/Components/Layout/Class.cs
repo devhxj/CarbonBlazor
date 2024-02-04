@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
 
-namespace EnjoyAuth.Components.Layout
+namespace EnjoyAuth;
+
+public class Class1: InputCheckbox
 {
-    public class Class: InputCheckbox
-    {
-    }
+}
+
+public class Class2 : ValidationSummary
+{
+
 }

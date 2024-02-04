@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsExpandableTile : BaseComponent
+public class CdsExpandableTile : CdsComponentBase
 {
     /// <summary>
     /// The color scheme.
@@ -42,18 +42,19 @@ public class CdsExpandableTile : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-expandable-tile")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "color-scheme", ColorScheme)
-            .SetAttributeNotNull(7, "expanded", Expanded)
-            .SetAttributeNotNull(8, "has-rounded-corners", HasRoundedCorners)
-            .SetAttributeNotNull(9, "with-interactive", WithInteractive)
-            .SetAttributeNotNull(10, "styles", Styles)
-            .SetAttributes(11, AdditionalAttributes)
-            .SetContent(12, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "color-scheme", ColorScheme)
+            .SetAttributeNotNull(8, "expanded", Expanded)
+            .SetAttributeNotNull(9, "has-rounded-corners", HasRoundedCorners)
+            .SetAttributeNotNull(10, "with-interactive", WithInteractive)
+            .SetAttributeNotNull(11, "styles", Styles)
+            .SetReferenceCapture(12, CaptureReference)
+            .SetContent(13, ChildContent)
             .CloseElement();
     }
 }

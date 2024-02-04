@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsProgressBar : BaseComponent
+public class CdsProgressBar : CdsComponentBase
 {
     /// <summary>
     /// The current progress as a textual representation.
@@ -66,22 +66,23 @@ public class CdsProgressBar : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-progress-bar")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "helper-text", HelperText)
-            .SetAttributeNotNull(7, "hide-label", HideLabel)
-            .SetAttributeNotNull(8, "label", Label)
-            .SetAttributeNotNull(9, "max", Max)
-            .SetAttribute(10, "size", Size)
-            .SetAttribute(11, "status", Status)
-            .SetAttribute(12, "type", Type)
-            .SetAttributeNotNull(13, "value", Value)
-            .SetAttributeNotNull(14, "styles", Styles)
-            .SetAttributes(15, AdditionalAttributes)
-            .SetContent(16, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "helper-text", HelperText)
+            .SetAttributeNotNull(8, "hide-label", HideLabel)
+            .SetAttributeNotNull(9, "label", Label)
+            .SetAttributeNotNull(10, "max", Max)
+            .SetAttribute(11, "size", Size)
+            .SetAttribute(12, "status", Status)
+            .SetAttribute(13, "type", Type)
+            .SetAttributeNotNull(14, "value", Value)
+            .SetAttributeNotNull(15, "styles", Styles)
+            .SetReferenceCapture(16, CaptureReference)
+            .SetContent(17, ChildContent)
             .CloseElement();
     }
 }

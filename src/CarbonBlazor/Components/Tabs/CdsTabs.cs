@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTabs : BaseComponent
+public class CdsTabs : CdsComponentBase
 {
     /// <summary>
     /// An assistive text for screen reader to announce, telling the open state.
@@ -66,22 +66,23 @@ public class CdsTabs : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-tabs")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "selecting-items-assistive-text", SelectingItemsAssistiveText)
-            .SetAttributeNotNull(7, "selected-item-assistive-text", SelectedItemAssistiveText)
-            .SetAttributeNotNull(8, "trigger-content", TriggerContent)
-            .SetAttributeNotNull(9, "type", Type)
-            .SetAttributeNotNull(10, "trigger_keys", TRIGGER_KEYS)
-            .SetAttributeNotNull(11, "value", Value)
-            .SetAttributeNotNull(12, "size", Size)
-            .SetAttributeNotNull(13, "icon", IconOnly)
-            .SetAttributeNotNull(14, "styles", Styles)
-            .SetAttributes(15, AdditionalAttributes)
-            .SetContent(16, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "selecting-items-assistive-text", SelectingItemsAssistiveText)
+            .SetAttributeNotNull(8, "selected-item-assistive-text", SelectedItemAssistiveText)
+            .SetAttributeNotNull(9, "trigger-content", TriggerContent)
+            .SetAttributeNotNull(10, "type", Type)
+            .SetAttributeNotNull(11, "trigger_keys", TRIGGER_KEYS)
+            .SetAttributeNotNull(12, "value", Value)
+            .SetAttributeNotNull(13, "size", Size)
+            .SetAttributeNotNull(14, "icon", IconOnly)
+            .SetAttributeNotNull(15, "styles", Styles)
+            .SetReferenceCapture(16, CaptureReference)
+            .SetContent(17, ChildContent)
             .CloseElement();
     }
 }

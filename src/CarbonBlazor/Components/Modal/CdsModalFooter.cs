@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsModalFooter : BaseComponent
+public class CdsModalFooter : CdsComponentBase
 {
     /// <summary>
     /// `true` if this modal footer has more than two buttons.
@@ -21,15 +21,16 @@ public class CdsModalFooter : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-modal-footer")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "has-three-buttons", HasThreeButtons)
-            .SetAttributeNotNull(7, "styles", Styles)
-            .SetAttributes(8, AdditionalAttributes)
-            .SetContent(9, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "has-three-buttons", HasThreeButtons)
+            .SetAttributeNotNull(8, "styles", Styles)
+            .SetReferenceCapture(9, CaptureReference)
+            .SetContent(10, ChildContent)
             .CloseElement();
     }
 }

@@ -11,7 +11,7 @@ public class ListItemContext
     public string NestedSlot = "nested";
 }
 
-public class CdsListItem : BaseComponent<ListItemContext>
+public class CdsListItem : CdsComponentBase<ListItemContext>
 {
     /// <summary>
     /// `true` if this list item is a child of a nested list.
@@ -31,15 +31,16 @@ public class CdsListItem : BaseComponent<ListItemContext>
     {
         builder
             .OpenElementAnd(0, "cds-list-item")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "nested", Nested)
-            .SetAttributeNotNull(7, "styles", Styles)
-            .SetAttributes(8, AdditionalAttributes)
-            .SetContent(9, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "nested", Nested)
+            .SetAttributeNotNull(8, "styles", Styles)
+            .SetReferenceCapture(9, CaptureReference)
+            .SetContent(10, ChildContent, new())
             .CloseElement();
     }
 }

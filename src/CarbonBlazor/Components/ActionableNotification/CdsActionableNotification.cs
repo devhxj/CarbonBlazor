@@ -16,7 +16,7 @@ public class ActionableNotificationContext
     public string TitleSlot = "title";
 }
 
-public class CdsActionableNotification : BaseComponent<ActionableNotificationContext>
+public class CdsActionableNotification : CdsComponentBase<ActionableNotificationContext>
 {
     /// <summary>
     /// Inline notification type.
@@ -107,26 +107,27 @@ public class CdsActionableNotification : BaseComponent<ActionableNotificationCon
     {
         builder
             .OpenElementAnd(0, "cds-actionable-notification")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "inline", Inline)
-            .SetAttributeNotNull(7, "action-button-label", ActionButtonLabel)
-            .SetAttributeNotNull(8, "close-on-escape", CloseOnEscape)
-            .SetAttributeNotNull(9, "has-focus", HasFocus)
-            .SetAttributeNotNull(10, "caption", Caption)
-            .SetAttributeNotNull(11, "hide-close-button", HideCloseButton)
-            .SetAttributeNotNull(12, "status-icon-description", StatusIconDescription)
-            .SetAttribute(13, "kind", Kind)
-            .SetAttributeNotNull(14, "low-contrast", LowContrast)
-            .SetAttributeNotNull(15, "open", Open)
-            .SetAttributeNotNull(16, "timeout", Timeout)
-            .SetAttributeNotNull(17, "subtitle", Subtitle)
-            .SetAttributeNotNull(18, "styles", Styles)
-            .SetAttributes(19, AdditionalAttributes)
-            .SetContent(20, ChildContent, new())
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "inline", Inline)
+            .SetAttributeNotNull(8, "action-button-label", ActionButtonLabel)
+            .SetAttributeNotNull(9, "close-on-escape", CloseOnEscape)
+            .SetAttributeNotNull(10, "has-focus", HasFocus)
+            .SetAttributeNotNull(11, "caption", Caption)
+            .SetAttributeNotNull(12, "hide-close-button", HideCloseButton)
+            .SetAttributeNotNull(13, "status-icon-description", StatusIconDescription)
+            .SetAttribute(14, "kind", Kind)
+            .SetAttributeNotNull(15, "low-contrast", LowContrast)
+            .SetAttributeNotNull(16, "open", Open)
+            .SetAttributeNotNull(17, "timeout", Timeout)
+            .SetAttributeNotNull(18, "subtitle", Subtitle)
+            .SetAttributeNotNull(19, "styles", Styles)
+            .SetReferenceCapture(20, CaptureReference)
+            .SetContent(21, ChildContent, new())
             .CloseElement();
     }
 }

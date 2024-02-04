@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTab : BaseComponent
+public class CdsTab : CdsComponentBase
 {
     /// <summary>
     /// Tab type.
@@ -93,25 +93,26 @@ public class CdsTab : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-tab")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "type", Type)
-            .SetAttributeNotNull(7, "tabTitle", TabTitle)
-            .SetAttributeNotNull(8, "disabled", Disabled)
-            .SetAttributeNotNull(9, "target", Target)
-            .SetAttributeNotNull(10, "value", Value)
-            .SetAttributeNotNull(11, "icon", Icon)
-            .SetAttributeNotNull(12, "align", Align)
-            .SetAttributeNotNull(13, "close-on-activation", CloseOnActivation)
-            .SetAttributeNotNull(14, "enterdelayms", EnterDelayMs)
-            .SetAttributeNotNull(15, "leavedelayms", LeaveDelayMs)
-            .SetAttributeNotNull(16, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(17, "styles", Styles)
-            .SetAttributes(18, AdditionalAttributes)
-            .SetContent(19, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "type", Type)
+            .SetAttributeNotNull(8, "tabTitle", TabTitle)
+            .SetAttributeNotNull(9, "disabled", Disabled)
+            .SetAttributeNotNull(10, "target", Target)
+            .SetAttributeNotNull(11, "value", Value)
+            .SetAttributeNotNull(12, "icon", Icon)
+            .SetAttributeNotNull(13, "align", Align)
+            .SetAttributeNotNull(14, "close-on-activation", CloseOnActivation)
+            .SetAttributeNotNull(15, "enterdelayms", EnterDelayMs)
+            .SetAttributeNotNull(16, "leavedelayms", LeaveDelayMs)
+            .SetAttributeNotNull(17, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(18, "styles", Styles)
+            .SetReferenceCapture(19, CaptureReference)
+            .SetContent(20, ChildContent)
             .CloseElement();
     }
 }

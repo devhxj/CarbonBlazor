@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsCodeSnippet : BaseComponent
+public class CdsCodeSnippet : CdsComponentBase
 {
     /// <summary>
     /// Optional text to copy. If not specified, the `children` node's `innerText`
@@ -120,29 +120,30 @@ public class CdsCodeSnippet : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-code-snippet")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "copy-text", CopyText)
-            .SetAttributeNotNull(7, "disabled", Disabled)
-            .SetAttributeNotNull(8, "feedback", Feedback)
-            .SetAttributeNotNull(9, "feedback-timeout", FeedbackTimeout)
-            .SetAttributeNotNull(10, "hide-copy-button", HideCopyButton)
-            .SetAttributeNotNull(11, "maxCollapsedNumberOfRows", MaxCollapsedNumberOfRows)
-            .SetAttributeNotNull(12, "maxExpandedNumberOfRows", MaxExpandedNumberOfRows)
-            .SetAttributeNotNull(13, "minCollapsedNumberOfRows", MinCollapsedNumberOfRows)
-            .SetAttributeNotNull(14, "minExpandedNumberOfRows", MinExpandedNumberOfRows)
-            .SetAttributeNotNull(15, "show-less-text", ShowLessText)
-            .SetAttributeNotNull(16, "show-more-text", ShowMoreText)
-            .SetAttributeNotNull(17, "tooltip-content", TooltipContent)
-            .SetAttributeNotNull(18, "wrap-text", WrapText)
-            .SetAttribute(19, "type", Type)
-            .SetAttributeNotNull(20, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(21, "styles", Styles)
-            .SetAttributes(22, AdditionalAttributes)
-            .SetContent(23, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "copy-text", CopyText)
+            .SetAttributeNotNull(8, "disabled", Disabled)
+            .SetAttributeNotNull(9, "feedback", Feedback)
+            .SetAttributeNotNull(10, "feedback-timeout", FeedbackTimeout)
+            .SetAttributeNotNull(11, "hide-copy-button", HideCopyButton)
+            .SetAttributeNotNull(12, "maxCollapsedNumberOfRows", MaxCollapsedNumberOfRows)
+            .SetAttributeNotNull(13, "maxExpandedNumberOfRows", MaxExpandedNumberOfRows)
+            .SetAttributeNotNull(14, "minCollapsedNumberOfRows", MinCollapsedNumberOfRows)
+            .SetAttributeNotNull(15, "minExpandedNumberOfRows", MinExpandedNumberOfRows)
+            .SetAttributeNotNull(16, "show-less-text", ShowLessText)
+            .SetAttributeNotNull(17, "show-more-text", ShowMoreText)
+            .SetAttributeNotNull(18, "tooltip-content", TooltipContent)
+            .SetAttributeNotNull(19, "wrap-text", WrapText)
+            .SetAttribute(20, "type", Type)
+            .SetAttributeNotNull(21, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(22, "styles", Styles)
+            .SetReferenceCapture(23, CaptureReference)
+            .SetContent(24, ChildContent)
             .CloseElement();
     }
 }

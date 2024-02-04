@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSliderInput : BaseComponent
+public class CdsSliderInput : CdsComponentBase
 {
     /// <summary>
     /// `true` if the input should be disabled.
@@ -79,24 +79,25 @@ public class CdsSliderInput : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-slider-input")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "disabled", Disabled)
-            .SetAttributeNotNull(7, "invalid", Invalid)
-            .SetAttributeNotNull(8, "warn", Warn)
-            .SetAttributeNotNull(9, "max", Max)
-            .SetAttributeNotNull(10, "min", Min)
-            .SetAttributeNotNull(11, "step", Step)
-            .SetAttributeNotNull(12, "type", Type)
-            .SetAttributeNotNull(13, "value", Value)
-            .SetAttributeNotNull(14, "readonly", Readonly)
-            .SetAttributeNotNull(15, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(16, "styles", Styles)
-            .SetAttributes(17, AdditionalAttributes)
-            .SetContent(18, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "disabled", Disabled)
+            .SetAttributeNotNull(8, "invalid", Invalid)
+            .SetAttributeNotNull(9, "warn", Warn)
+            .SetAttributeNotNull(10, "max", Max)
+            .SetAttributeNotNull(11, "min", Min)
+            .SetAttributeNotNull(12, "step", Step)
+            .SetAttributeNotNull(13, "type", Type)
+            .SetAttributeNotNull(14, "value", Value)
+            .SetAttributeNotNull(15, "readonly", Readonly)
+            .SetAttributeNotNull(16, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(17, "styles", Styles)
+            .SetReferenceCapture(18, CaptureReference)
+            .SetContent(19, ChildContent)
             .CloseElement();
     }
 }

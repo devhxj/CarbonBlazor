@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTableSkeleton : BaseComponent
+public class CdsTableSkeleton : CdsComponentBase
 {
     /// <summary>
     /// Optionally specify whether you want the Skeleton to be rendered as a compact DataTable
@@ -56,20 +56,21 @@ public class CdsTableSkeleton : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table-skeleton")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "compact", Compact)
-            .SetAttributeNotNull(7, "column-count", ColumnCount)
-            .SetAttributeNotNull(8, "row-count", RowCount)
-            .SetAttributeNotNull(9, "show-header", ShowHeader)
-            .SetAttributeNotNull(10, "show-toolbar", ShowToolbar)
-            .SetAttributeNotNull(11, "zebra", Zebra)
-            .SetAttributeNotNull(12, "styles", Styles)
-            .SetAttributes(13, AdditionalAttributes)
-            .SetContent(14, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "compact", Compact)
+            .SetAttributeNotNull(8, "column-count", ColumnCount)
+            .SetAttributeNotNull(9, "row-count", RowCount)
+            .SetAttributeNotNull(10, "show-header", ShowHeader)
+            .SetAttributeNotNull(11, "show-toolbar", ShowToolbar)
+            .SetAttributeNotNull(12, "zebra", Zebra)
+            .SetAttributeNotNull(13, "styles", Styles)
+            .SetReferenceCapture(14, CaptureReference)
+            .SetContent(15, ChildContent)
             .CloseElement();
     }
 }

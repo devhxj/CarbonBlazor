@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsFileUploaderContainer : BaseComponent
+public class CdsFileUploaderContainer : CdsComponentBase
 {
     /// <summary>
     /// Button kind.
@@ -62,21 +62,22 @@ public class CdsFileUploaderContainer : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-file-uploader-container")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttribute(6, "button-kind", ButtonKind)
-            .SetAttribute(7, "size", Size)
-            .SetAttributeNotNull(8, "accept", Accept)
-            .SetAttributeNotNull(9, "disabled", Disabled)
-            .SetAttributeNotNull(10, "multiple", Multiple)
-            .SetAttributeNotNull(11, "name", Name)
-            .SetAttributeNotNull(12, "slot", Slot)
-            .SetAttributeNotNull(13, "styles", Styles)
-            .SetAttributes(14, AdditionalAttributes)
-            .SetContent(15, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttribute(7, "button-kind", ButtonKind)
+            .SetAttribute(8, "size", Size)
+            .SetAttributeNotNull(9, "accept", Accept)
+            .SetAttributeNotNull(10, "disabled", Disabled)
+            .SetAttributeNotNull(11, "multiple", Multiple)
+            .SetAttributeNotNull(12, "name", Name)
+            .SetAttributeNotNull(13, "slot", Slot)
+            .SetAttributeNotNull(14, "styles", Styles)
+            .SetReferenceCapture(15, CaptureReference)
+            .SetContent(16, ChildContent)
             .CloseElement();
     }
 }

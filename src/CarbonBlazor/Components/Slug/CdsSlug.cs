@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsSlug : BaseComponent
+public class CdsSlug : CdsComponentBase
 {
     /// <summary>
     /// <para><b>DefaultValue : "slug"</b></para>
@@ -95,27 +95,28 @@ public class CdsSlug : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-slug")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "slot", Slot)
-            .SetAttributeNotNull(7, "ai-text", AiText)
-            .SetAttributeNotNull(8, "ai-text-label", AiTextLabel)
-            .SetAttributeNotNull(9, "dot-type", DotType)
-            .SetAttributeNotNull(10, "kind", Kind)
-            .SetAttributeNotNull(11, "revert-active", RevertActive)
-            .SetAttributeNotNull(12, "revert-label", RevertLabel)
-            .SetAttribute(13, "size", Size)
-            .SetAttributeNotNull(14, "slug-label", SlugLabel)
-            .SetAttributeNotNull(15, "previousValue", PreviousValue)
-            .SetAttribute(16, "alignment", Alignment)
-            .SetAttributeNotNull(17, "open", Open)
-            .SetAttributeNotNull(18, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(19, "styles", Styles)
-            .SetAttributes(20, AdditionalAttributes)
-            .SetContent(21, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "slot", Slot)
+            .SetAttributeNotNull(8, "ai-text", AiText)
+            .SetAttributeNotNull(9, "ai-text-label", AiTextLabel)
+            .SetAttributeNotNull(10, "dot-type", DotType)
+            .SetAttributeNotNull(11, "kind", Kind)
+            .SetAttributeNotNull(12, "revert-active", RevertActive)
+            .SetAttributeNotNull(13, "revert-label", RevertLabel)
+            .SetAttribute(14, "size", Size)
+            .SetAttributeNotNull(15, "slug-label", SlugLabel)
+            .SetAttributeNotNull(16, "previousValue", PreviousValue)
+            .SetAttribute(17, "alignment", Alignment)
+            .SetAttributeNotNull(18, "open", Open)
+            .SetAttributeNotNull(19, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(20, "styles", Styles)
+            .SetReferenceCapture(21, CaptureReference)
+            .SetContent(22, ChildContent)
             .CloseElement();
     }
 }

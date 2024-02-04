@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsTableExpandedRow : BaseComponent
+public class CdsTableExpandedRow : CdsComponentBase
 {
     /// <summary>
     /// The colspan.
@@ -49,19 +49,20 @@ public class CdsTableExpandedRow : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-table-expanded-row")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "colspan", ColSpan)
-            .SetAttributeNotNull(7, "expanded", Expanded)
-            .SetAttributeNotNull(8, "filtered", Filtered)
-            .SetAttributeNotNull(9, "highlighted", Highlighted)
-            .SetAttributeNotNull(10, "selected", Selected)
-            .SetAttributeNotNull(11, "styles", Styles)
-            .SetAttributes(12, AdditionalAttributes)
-            .SetContent(13, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "colspan", ColSpan)
+            .SetAttributeNotNull(8, "expanded", Expanded)
+            .SetAttributeNotNull(9, "filtered", Filtered)
+            .SetAttributeNotNull(10, "highlighted", Highlighted)
+            .SetAttributeNotNull(11, "selected", Selected)
+            .SetAttributeNotNull(12, "styles", Styles)
+            .SetReferenceCapture(13, CaptureReference)
+            .SetContent(14, ChildContent)
             .CloseElement();
     }
 }

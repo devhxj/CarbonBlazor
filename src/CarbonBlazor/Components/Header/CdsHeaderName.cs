@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CarbonBlazor;
-public class CdsHeaderName : BaseComponent
+public class CdsHeaderName : CdsComponentBase
 {
     /// <summary>
     /// Link `href`.
@@ -32,17 +32,18 @@ public class CdsHeaderName : BaseComponent
     {
         builder
             .OpenElementAnd(0, "cds-header-name")
-            .SetAttribute(1, "id", Id)
-            .SetAttributeNotNull(2, "title", Title)
-            .SetAttributeNotNull(3, "tabindex", TabIndex)
-            .SetAttributeNotNull(4, "role", Role)
-            .SetAttributeNotNull(5, "aria-label", AriaLabel)
-            .SetAttributeNotNull(6, "href", Href)
-            .SetAttributeNotNull(7, "prefix", Prefix)
-            .SetAttributeNotNull(8, "shadowRootOptions", ShadowRootOptions)
-            .SetAttributeNotNull(9, "styles", Styles)
-            .SetAttributes(10, AdditionalAttributes)
-            .SetContent(11, ChildContent)
+            .SetAttributes(1, AdditionalAttributes)
+            .SetAttribute(2, "id", Id)
+            .SetAttributeNotNull(3, "title", Title)
+            .SetAttributeNotNull(4, "tabindex", TabIndex)
+            .SetAttributeNotNull(5, "role", Role)
+            .SetAttributeNotNull(6, "aria-label", AriaLabel)
+            .SetAttributeNotNull(7, "href", Href)
+            .SetAttributeNotNull(8, "prefix", Prefix)
+            .SetAttributeNotNull(9, "shadowRootOptions", ShadowRootOptions)
+            .SetAttributeNotNull(10, "styles", Styles)
+            .SetReferenceCapture(11, CaptureReference)
+            .SetContent(12, ChildContent)
             .CloseElement();
     }
 }
